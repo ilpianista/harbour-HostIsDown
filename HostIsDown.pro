@@ -1,4 +1,4 @@
-TARGET = HostIsDown
+TARGET = harbour-hostisdown
 
 CONFIG += sailfishapp
 
@@ -8,16 +8,16 @@ SOURCES += \
 
 OTHER_FILES += \
     qml/cover/CoverPage.qml \
-    rpm/HostIsDown.spec \
-    rpm/HostIsDown.yaml \
     translations/*.ts \
-    HostIsDown.desktop \
     qml/pages/MainPage.qml \
     qml/HostIsDown.qml \
-    rpm/HostIsDown.changes
+    harbour-hostisdown.desktop \
+    rpm/harbour-hostisdown.changes \
+    rpm/harbour-hostisdown.spec \
+    rpm/harbour-hostisdown.yaml
 
 CONFIG += sailfishapp_i18n
-TRANSLATIONS += translations/HostIsDown-it.ts
+TRANSLATIONS += translations/harbour-hostisdown-it.ts
 
 HEADERS += \
     src/pingaction.h

@@ -5,7 +5,7 @@
     <name>CoverPage</name>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="37"/>
-        <source>Ping It!</source>
+        <source>Ping It</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 X-Nemo-Application-Type=silica-qt5
-Icon=HostIsDown
-Exec=HostIsDown
+Icon=harbour-hostisdown
+Exec=harbour-hostisdown
 Name=HostIsDown
-Name[it]=HostIsDown
+Comment=Check if the desired host is up or not
