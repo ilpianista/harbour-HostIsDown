@@ -4,14 +4,16 @@
 <context>
     <name>CoverPage</name>
     <message>
-        <source>Ping It!</source>
+        <location filename="../qml/cover/CoverPage.qml" line="37"/>
+        <source>Esegui il Ping</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>MainPage</name>
     <message>
-        <source>Ping any host!</source>
+        <location filename="../qml/pages/MainPage.qml" line="66"/>
+        <source>Pinga un host!</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
