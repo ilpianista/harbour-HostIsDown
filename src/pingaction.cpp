@@ -46,8 +46,13 @@ PingAction::~PingAction()
     delete m_process;
 }
 
-void PingAction::ping(const QString &host)
+void PingAction::ping(const QString &host, const bool ipv6)
 {
     qDebug() << "Pinging" << host;
-    m_process->start("/bin/ping -c 1 " + host);
+
+    if (ipv6) {
+        m_process->start("/bin/ping6 -c 1 " + host);
+    } else {
+        m_process->start("/bin/ping -c 1 " + host);
+    }
 }

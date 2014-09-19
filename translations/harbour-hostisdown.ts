@@ -5,7 +5,7 @@
     <name>CoverPage</name>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="37"/>
-        <source>Ping It</source>
+        <source>Ping It!</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -14,6 +14,11 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="66"/>
         <source>Ping any host!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MainPage.qml" line="87"/>
+        <source>IPv6</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

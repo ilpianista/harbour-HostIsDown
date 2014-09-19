@@ -40,7 +40,7 @@ class PingAction : public QObject
 public:
     explicit PingAction(QObject *parent = 0);
     virtual ~PingAction();
-    Q_INVOKABLE void ping(const QString &host);
+    Q_INVOKABLE void ping(const QString &host, const bool ipv6);
 
 Q_SIGNALS:
     void result(int exitCode);

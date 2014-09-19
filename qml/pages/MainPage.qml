@@ -42,16 +42,16 @@ Page {
             switch (exitCode) {
             case 0:
                 errorMsg.color = "green";
-                errorMsg.text = "The host is UP!";
+                errorMsg.text = qsTr("The host is UP!");
                 break;
             case 2:
                 errorMsg.color = "yellow";
-                errorMsg.text = "The host is UNKNOWN";
+                errorMsg.text = qsTr("The host is UNKNOWN");
                 break;
             case 1:
             default:
                 errorMsg.color = "red";
-                errorMsg.text = "The host is DOWN!";
+                errorMsg.text = qsTr("The host is DOWN!");
             }
         }
     }
@@ -71,7 +71,20 @@ Page {
             width: column.width
             focus: true
             inputMethodHints: Qt.ImhNoAutoUppercase | Qt.ImhUrlCharactersOnly
-            placeholderText: "Write an IP address or an host name"
+            placeholderText: "An IP address or hostname"
+
+            onTextChanged: {
+                if (host.text.match('([a-zA-Z1-9]{1,4}:){5}[a-zA-Z1-9]{1,4}')) {
+                    ipv6.checked = true;
+                } else if (host.text.match('([1-9]{1,3}.){3}[1-9]{1,3}')) {
+                    ipv6.checked = false;
+                }
+            }
+        }
+
+        TextSwitch {
+            id: ipv6
+            text: qsTr("IPv6")
         }
 
         Label {
@@ -81,10 +94,10 @@ Page {
 
         Button {
             id: button
-            text: "Ping it"
+            text: qsTr("Ping it")
             anchors.horizontalCenter: parent.horizontalCenter
             onClicked: {
-                pingAction.ping(host.text);
+                pingAction.ping(host.text, ipv6.checked);
                 button.enabled = false;
             }
         }

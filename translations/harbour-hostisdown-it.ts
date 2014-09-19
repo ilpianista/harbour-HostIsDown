@@ -5,7 +5,7 @@
     <name>CoverPage</name>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="37"/>
-        <source>Esegui il Ping</source>
+        <source>Esegui il ping</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -13,7 +13,12 @@
     <name>MainPage</name>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="66"/>
-        <source>Pinga un host!</source>
+        <source>Ping any host!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MainPage.qml" line="87"/>
+        <source>IPv6</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
