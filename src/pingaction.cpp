@@ -43,6 +43,7 @@ PingAction::~PingAction()
     if (m_process->state() == QProcess::Running) {
         m_process->kill();
     }
+
     delete m_process;
 }
 

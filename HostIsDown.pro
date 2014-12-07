@@ -21,4 +21,3 @@ TRANSLATIONS += translations/harbour-hostisdown-it.ts
 
 HEADERS += \
     src/pingaction.h
-

@@ -71,7 +71,7 @@ Page {
             width: column.width
             focus: true
             inputMethodHints: Qt.ImhNoAutoUppercase | Qt.ImhUrlCharactersOnly
-            placeholderText: "An IP address or hostname"
+            placeholderText: qsTr("An IP address or hostname")
 
             onTextChanged: {
                 if (host.text.match('([a-zA-Z1-9]{1,4}:){5}[a-zA-Z1-9]{1,4}')) {
@@ -96,6 +96,7 @@ Page {
             id: button
             text: qsTr("Ping it")
             anchors.horizontalCenter: parent.horizontalCenter
+
             onClicked: {
                 pingAction.ping(host.text, ipv6.checked);
                 button.enabled = false;
