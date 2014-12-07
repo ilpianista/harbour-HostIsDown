@@ -30,6 +30,7 @@
 #include "pingaction.h"
 
 #include <QDebug>
+#include <QUrl>
 
 PingAction::PingAction(QObject *parent) :
     QObject(parent),
@@ -49,11 +50,14 @@ PingAction::~PingAction()
 
 void PingAction::ping(const QString &host, const bool ipv6)
 {
-    qDebug() << "Pinging" << host;
+    const QUrl url(host);
+    if (url.isValid()) {
+        qDebug() << "Pinging" << host;
 
-    if (ipv6) {
-        m_process->start("/bin/ping6 -c 1 " + host);
-    } else {
-        m_process->start("/bin/ping -c 1 " + host);
+        if (ipv6) {
+            m_process->start("/bin/ping6 -c 1 " + host);
+        } else {
+            m_process->start("/bin/ping -c 1 " + host);
+        }
     }
 }
