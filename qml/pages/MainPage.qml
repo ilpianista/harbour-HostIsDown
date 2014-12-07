@@ -35,22 +35,23 @@ Page {
 
     Connections {
         target: pingAction
+
         onResult: {
             console.log("Ping reply is " + exitCode);
             button.enabled = true;
 
             switch (exitCode) {
             case 0:
-                errorMsg.color = "green";
+                errorMsg.color = Theme.secondaryColor;
                 errorMsg.text = qsTr("The host is UP!");
                 break;
             case 2:
-                errorMsg.color = "yellow";
+                errorMsg.color = Theme.secondaryHighlightColor;
                 errorMsg.text = qsTr("The host is UNKNOWN");
                 break;
             case 1:
             default:
-                errorMsg.color = "red";
+                errorMsg.color = Theme.highlightColor;
                 errorMsg.text = qsTr("The host is DOWN!");
             }
         }
@@ -98,12 +99,10 @@ Page {
             anchors.horizontalCenter: parent.horizontalCenter
 
             onClicked: {
-                pingAction.ping(host.text, ipv6.checked);
+                errorMsg.text = "";
                 button.enabled = false;
+                pingAction.ping(host.text, ipv6.checked);
             }
         }
     }
-
 }
-
-
