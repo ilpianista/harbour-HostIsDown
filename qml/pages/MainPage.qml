@@ -100,8 +100,10 @@ Page {
 
             onClicked: {
                 errorMsg.text = "";
-                button.enabled = false;
-                pingAction.ping(host.text, ipv6.checked);
+                if (host.text.length !== 0) {
+                    button.enabled = false;
+                    pingAction.ping(host.text, ipv6.checked);
+                }
             }
         }
     }
