@@ -27,25 +27,50 @@
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#include <QtQuick>
-
-#include <sailfishapp.h>
-
 #include "dbmanager.h"
-#include "pingaction.h"
 
-int main(int argc, char *argv[])
+#include <QDebug>
+#include <QDir>
+#include <QStandardPaths>
+#include <QSqlQuery>
+
+const static QString DB_NAME = "hostisdown";
+const static QString TABLE_HOSTS = "hosts";
+
+DBManager::DBManager(QObject *parent) :
+    QObject(parent)
 {
-    QGuiApplication *app = SailfishApp::application(argc, argv);
+    db = QSqlDatabase::addDatabase("QSQLITE");
 
-    PingAction ping;
-    QQuickView *view = SailfishApp::createView();
-    view->rootContext()->setContextProperty("pingAction", &ping);
-    view->setSource(SailfishApp::pathTo("qml/HostIsDown.qml"));
-    view->showFullScreen();
+    const QString dbPath(QStandardPaths::writableLocation(QStandardPaths::DataLocation));
+    db.setDatabaseName(dbPath + QDir::separator() + DB_NAME + ".sql");
 
-    DBManager db;
+    const QDir dir;
+    if (!dir.exists(dbPath))
+    {
+        if (!dir.mkpath(dbPath))
+        {
+            qCritical("Cannot create data folder!");
+        }
+    }
 
-    return app->exec();
+    if (!db.open()) {
+        qCritical("Unable to open database!");
+    } else {
+        init();
+    }
 }
 
+DBManager::~DBManager()
+{
+    db.close();
+}
+
+void DBManager::init()
+{
+    QSqlQuery createTable(db);
+    if (!createTable.exec("CREATE TABLE IF NOT EXISTS " + TABLE_HOSTS + "(host TEXT, status SMALLINT, timestamp DATETIME DEFAULT CURRENT_TIMESTAMP);"))
+    {
+        qCritical("Cannot create table!");
+    }
+}

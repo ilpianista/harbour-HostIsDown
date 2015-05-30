@@ -27,25 +27,23 @@
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#include <QtQuick>
+#ifndef DBMANAGER_H
+#define DBMANAGER_H
 
-#include <sailfishapp.h>
+#include <QObject>
+#include <QSqlDatabase>
 
-#include "dbmanager.h"
-#include "pingaction.h"
-
-int main(int argc, char *argv[])
+class DBManager : public QObject
 {
-    QGuiApplication *app = SailfishApp::application(argc, argv);
+    Q_OBJECT
+public:
+    explicit DBManager(QObject *parent = 0);
+    virtual ~DBManager();
 
-    PingAction ping;
-    QQuickView *view = SailfishApp::createView();
-    view->rootContext()->setContextProperty("pingAction", &ping);
-    view->setSource(SailfishApp::pathTo("qml/HostIsDown.qml"));
-    view->showFullScreen();
+    void init();
 
-    DBManager db;
+private:
+    QSqlDatabase db;
+};
 
-    return app->exec();
-}
-
+#endif // DBMANAGER_H
