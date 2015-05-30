@@ -52,12 +52,14 @@ void PingAction::ping(const QString &host, const bool ipv6)
 {
     const QUrl url(host);
     if (url.isValid()) {
-        qDebug() << "Pinging" << host;
-
         if (ipv6) {
+            qDebug() << "Pinging" << host << "using IPv6";
             m_process->start("/bin/ping6 -c 1 " + host);
         } else {
+            qDebug() << "Pinging" << host << "using IPv4";
             m_process->start("/bin/ping -c 1 " + host);
         }
+    } else {
+        qDebug() << "Not a valid URL:" << host;
     }
 }
