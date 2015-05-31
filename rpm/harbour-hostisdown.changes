@@ -1,5 +1,11 @@
-* Tue Sep 19 2014 Andrea Scarpino <me@andreascarpino> 0.2-1
+* Sun May 31 2015 Andrea Scarpino <me@andreascarpino.it> 0.3-1
+- Show history of pinged hosts
+- Do not invoke ping action if there's no text
+- Reset ping reply when pinging a new host
+- Check url validation
+
+* Tue Sep 19 2014 Andrea Scarpino <me@andreascarpino.it> 0.2-1
 - IPv6 support
 
-* Tue Sep 09 2014 Andrea Scarpino <me@andreascarpino> 0.1-1
+* Tue Sep 09 2014 Andrea Scarpino <me@andreascarpino.it> 0.1-1
 - First release!
