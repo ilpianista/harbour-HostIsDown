@@ -31,7 +31,6 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 Page {
-    id: page
 
     Connections {
         target: pingAction
@@ -57,71 +56,65 @@ Page {
         }
     }
 
-    Column {
-        id: column
+    SilicaFlickable {
         anchors.fill: parent
+        contentHeight: column.height
 
-        PageHeader {
-            title: qsTr("Ping any host!")
-        }
+        Column {
+            id: column
+            width: parent.width
 
-        TextField {
-            id: target
-            width: column.width
-            focus: true
-            inputMethodHints: Qt.ImhNoAutoUppercase | Qt.ImhUrlCharactersOnly
-            placeholderText: qsTr("An IP address or hostname")
+            PageHeader {
+                title: qsTr("Ping any host!")
+            }
 
-            onTextChanged: {
-                if (target.text.match('([a-zA-Z1-9]{1,4}:){5}[a-zA-Z1-9]{1,4}')) {
-                    ipv6.checked = true;
-                } else if (target.text.match('([1-9]{1,3}.){3}[1-9]{1,3}')) {
-                    ipv6.checked = false;
+            TextField {
+                id: target
+                width: column.width
+                focus: true
+                inputMethodHints: Qt.ImhNoAutoUppercase | Qt.ImhUrlCharactersOnly
+                placeholderText: qsTr("An IP address or hostname")
+
+                onTextChanged: {
+                    if (target.text.match('([a-zA-Z1-9]{1,4}:){5}[a-zA-Z1-9]{1,4}')) {
+                        ipv6.checked = true;
+                    } else if (target.text.match('([1-9]{1,3}.){3}[1-9]{1,3}')) {
+                        ipv6.checked = false;
+                    }
                 }
             }
-        }
 
-        TextSwitch {
-            id: ipv6
-            text: qsTr("IPv6")
-        }
-
-        Label {
-            id: errorMsg
-            anchors.horizontalCenter: parent.horizontalCenter
-        }
-
-        Button {
-            id: button
-            text: qsTr("Ping it")
-            anchors.horizontalCenter: parent.horizontalCenter
-
-            onClicked: {
-                errorMsg.text = "";
-                if (target.text.length !== 0) {
-                    button.enabled = false;
-                    pingAction.ping(target.text, ipv6.checked);
-                }
+            TextSwitch {
+                id: ipv6
+                text: qsTr("IPv6")
             }
-        }
-
-        SilicaFlickable {
-            anchors.top: button.bottom
-            height: recents.height
 
             Label {
-                id: recentsLabel
-                text: qsTr("History:")
+                id: errorMsg
+                anchors.horizontalCenter: parent.horizontalCenter
             }
 
-            Column {
-                id: recents
-                anchors.top: recentsLabel.bottom
+            Button {
+                id: button
+                text: qsTr("Ping it")
+                anchors.horizontalCenter: parent.horizontalCenter
 
-                Repeater {
-                    model: recentHosts
-                    delegate: HostDelegate {}
+                onClicked: {
+                    errorMsg.text = "";
+                    if (target.text.length !== 0) {
+                        button.enabled = false;
+                        pingAction.ping(target.text, ipv6.checked);
+                    }
                 }
+            }
+
+            SectionHeader {
+               text: qsTr("History")
+            }
+
+            Repeater {
+                model: recentHosts
+                delegate: HostDelegate {}
             }
         }
     }
