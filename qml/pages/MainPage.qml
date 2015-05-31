@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 2014 Andrea Scarpino <me@andreascarpino.it>
+  Copyright (C) 2014-2015 Andrea Scarpino <me@andreascarpino.it>
   All rights reserved.
 
   You may use this file under the terms of BSD license as follows:
@@ -58,26 +58,24 @@ Page {
     }
 
     Column {
-        anchors.fill: parent
         id: column
-        width: page.width
-        spacing: Theme.paddingLarge
+        anchors.fill: parent
 
         PageHeader {
             title: qsTr("Ping any host!")
         }
 
         TextField {
-            id: host
+            id: target
             width: column.width
             focus: true
             inputMethodHints: Qt.ImhNoAutoUppercase | Qt.ImhUrlCharactersOnly
             placeholderText: qsTr("An IP address or hostname")
 
             onTextChanged: {
-                if (host.text.match('([a-zA-Z1-9]{1,4}:){5}[a-zA-Z1-9]{1,4}')) {
+                if (target.text.match('([a-zA-Z1-9]{1,4}:){5}[a-zA-Z1-9]{1,4}')) {
                     ipv6.checked = true;
-                } else if (host.text.match('([1-9]{1,3}.){3}[1-9]{1,3}')) {
+                } else if (target.text.match('([1-9]{1,3}.){3}[1-9]{1,3}')) {
                     ipv6.checked = false;
                 }
             }
@@ -100,9 +98,29 @@ Page {
 
             onClicked: {
                 errorMsg.text = "";
-                if (host.text.length !== 0) {
+                if (target.text.length !== 0) {
                     button.enabled = false;
-                    pingAction.ping(host.text, ipv6.checked);
+                    pingAction.ping(target.text, ipv6.checked);
+                }
+            }
+        }
+
+        SilicaFlickable {
+            anchors.top: button.bottom
+            height: recents.height
+
+            Label {
+                id: recentsLabel
+                text: qsTr("History:")
+            }
+
+            Column {
+                id: recents
+                anchors.top: recentsLabel.bottom
+
+                Repeater {
+                    model: recentHosts
+                    delegate: HostDelegate {}
                 }
             }
         }

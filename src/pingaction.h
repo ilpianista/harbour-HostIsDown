@@ -42,11 +42,16 @@ public:
     virtual ~PingAction();
     Q_INVOKABLE void ping(const QString &host, const bool ipv6);
 
+public Q_SLOTS:
+    void slotResult(int exitCode);
+
 Q_SIGNALS:
-    void result(int exitCode);
+    void result(const QString &host, int exitCode);
 
 private:
     QProcess *m_process;
+    QString m_host;
+
 };
 
 #endif // PINGACTION_H

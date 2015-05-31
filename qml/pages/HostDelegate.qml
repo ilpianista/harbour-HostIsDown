@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 2014 Andrea Scarpino <me@andreascarpino.it>
+  Copyright (C) 2015 Andrea Scarpino <me@andreascarpino.it>
   All rights reserved.
 
   You may use this file under the terms of BSD license as follows:
@@ -27,45 +27,28 @@
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#include "pingaction.h"
+import QtQuick 2.0
+import Sailfish.Silica 1.0
 
-#include <QDebug>
-#include <QUrl>
+BackgroundItem {
+    width: contentItem.childrenRect.width
+    height: contentItem.childrenRect.height
 
-PingAction::PingAction(QObject *parent) :
-    QObject(parent),
-    m_process(new QProcess(this)), m_host(QString())
-{
-    connect(m_process, SIGNAL(finished(int)), this, SLOT(slotResult(int)));
-}
-
-PingAction::~PingAction()
-{
-    if (m_process->state() == QProcess::Running) {
-        m_process->kill();
-    }
-
-    delete m_process;
-}
-
-void PingAction::ping(const QString &host, const bool ipv6)
-{
-    const QUrl url(host);
-    if (url.isValid()) {
-        m_host = host;
-        if (ipv6) {
-            qDebug() << "Pinging" << host << "using IPv6";
-            m_process->start("/bin/ping6 -c 1 " + host);
-        } else {
-            qDebug() << "Pinging" << host << "using IPv4";
-            m_process->start("/bin/ping -c 1 " + host);
+    Label {
+        font.pixelSize: Theme.fontSizeSmall
+        text: host + " [" + timestamp + "]"
+        color: {
+            switch (status) {
+            case 0: return Theme.secondaryColor;
+            case 2: return Theme.secondaryHighlightColor;
+            case 1:
+            default: return Theme.highlightColor;
+            }
         }
-    } else {
-        qDebug() << "Not a valid URL:" << host;
     }
-}
 
-void PingAction::slotResult(int exitCode)
-{
-    emit result(m_host, exitCode);
+    onClicked: {
+        console.log("Selected host " + host);
+        target.text = host;
+    }
 }

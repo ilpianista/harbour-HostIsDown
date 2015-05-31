@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 2014 Andrea Scarpino <me@andreascarpino.it>
+  Copyright (C) 2015 Andrea Scarpino <me@andreascarpino.it>
   All rights reserved.
 
   You may use this file under the terms of BSD license as follows:
@@ -30,8 +30,9 @@
 #ifndef DBMANAGER_H
 #define DBMANAGER_H
 
-#include <QObject>
-#include <QSqlDatabase>
+#include "hostssqlmodel.h"
+
+class QSqlDatabase;
 
 class DBManager : public QObject
 {
@@ -40,10 +41,16 @@ public:
     explicit DBManager(QObject *parent = 0);
     virtual ~DBManager();
 
-    void init();
+    HostsSqlModel* recentHosts();
+
+public Q_SLOTS:
+    void insert(const QString &host, int status);
 
 private:
+    void init();
+
     QSqlDatabase db;
+    HostsSqlModel* m_model;
 };
 
 #endif // DBMANAGER_H

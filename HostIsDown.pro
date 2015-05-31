@@ -5,7 +5,8 @@ CONFIG += sailfishapp
 SOURCES += \
     src/main.cpp \
     src/pingaction.cpp \
-    src/dbmanager.cpp
+    src/dbmanager.cpp \
+    src/hostssqlmodel.cpp
 
 OTHER_FILES += \
     qml/cover/CoverPage.qml \
@@ -15,13 +16,15 @@ OTHER_FILES += \
     harbour-hostisdown.desktop \
     rpm/harbour-hostisdown.changes \
     rpm/harbour-hostisdown.spec \
-    rpm/harbour-hostisdown.yaml
+    rpm/harbour-hostisdown.yaml \
+    qml/pages/HostDelegate.qml
 
 CONFIG += sailfishapp_i18n
 TRANSLATIONS += translations/harbour-hostisdown-it.ts
 
 HEADERS += \
     src/pingaction.h \
-    src/dbmanager.h
+    src/dbmanager.h \
+    src/hostssqlmodel.h
 
 QT += sql

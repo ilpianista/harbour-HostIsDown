@@ -38,13 +38,18 @@ int main(int argc, char *argv[])
 {
     QGuiApplication *app = SailfishApp::application(argc, argv);
 
-    PingAction ping;
     QQuickView *view = SailfishApp::createView();
-    view->rootContext()->setContextProperty("pingAction", &ping);
-    view->setSource(SailfishApp::pathTo("qml/HostIsDown.qml"));
-    view->showFullScreen();
 
     DBManager db;
+    QSqlQueryModel* recentHosts = db.recentHosts();
+    view->rootContext()->setContextProperty("recentHosts", recentHosts);
+
+    PingAction ping;
+    view->rootContext()->setContextProperty("pingAction", &ping);
+    QObject::connect(&ping, SIGNAL(result(QString, int)), &db, SLOT(insert(QString, int)));
+
+    view->setSource(SailfishApp::pathTo("qml/HostIsDown.qml"));
+    view->showFullScreen();
 
     return app->exec();
 }

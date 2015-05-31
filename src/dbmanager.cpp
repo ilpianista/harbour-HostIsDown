@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 2014 Andrea Scarpino <me@andreascarpino.it>
+  Copyright (C) 2015 Andrea Scarpino <me@andreascarpino.it>
   All rights reserved.
 
   You may use this file under the terms of BSD license as follows:
@@ -32,10 +32,14 @@
 #include <QDebug>
 #include <QDir>
 #include <QStandardPaths>
+#include <QSqlDatabase>
 #include <QSqlQuery>
 
 const static QString DB_NAME = "hostisdown";
-const static QString TABLE_HOSTS = "hosts";
+
+const static QString CREATE_HOSTS_TABLE = "CREATE TABLE IF NOT EXISTS hosts(host TEXT PRIMARY KEY, status SMALLINT, timestamp DATETIME DEFAULT CURRENT_TIMESTAMP);";
+const static QString INSERT_INTO_HOSTS = "INSERT INTO hosts(host, status) VALUES(\"%1\", %2);";
+const static QString DELETE_HOST = "DELETE FROM hosts WHERE host=\"%1\";";
 
 DBManager::DBManager(QObject *parent) :
     QObject(parent)
@@ -69,8 +73,28 @@ DBManager::~DBManager()
 void DBManager::init()
 {
     QSqlQuery createTable(db);
-    if (!createTable.exec("CREATE TABLE IF NOT EXISTS " + TABLE_HOSTS + "(host TEXT, status SMALLINT, timestamp DATETIME DEFAULT CURRENT_TIMESTAMP);"))
+    if (!createTable.exec(CREATE_HOSTS_TABLE))
     {
         qCritical("Cannot create table!");
+    }
+}
+
+HostsSqlModel* DBManager::recentHosts()
+{
+    m_model = new HostsSqlModel(this);
+
+    return m_model;
+}
+
+void DBManager::insert(const QString &host, int status)
+{
+    QSqlQuery query(db);
+    if (!query.exec(DELETE_HOST.arg(host))) {
+        qCritical("Cannot delete data!");
+    }
+    if (!query.exec(INSERT_INTO_HOSTS.arg(host).arg(status))) {
+        qCritical("Cannot save data!");
+    } else {
+        m_model->refresh();
     }
 }
