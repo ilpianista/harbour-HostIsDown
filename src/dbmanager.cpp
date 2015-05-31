@@ -37,9 +37,10 @@
 
 const static QString DB_NAME = "hostisdown";
 
+const static QString CLEAR_HISTORY = "DELETE FROM hosts;";
 const static QString CREATE_HOSTS_TABLE = "CREATE TABLE IF NOT EXISTS hosts(host TEXT PRIMARY KEY, status SMALLINT, timestamp DATETIME DEFAULT CURRENT_TIMESTAMP);";
-const static QString INSERT_INTO_HOSTS = "INSERT INTO hosts(host, status) VALUES(\"%1\", %2);";
 const static QString DELETE_HOST = "DELETE FROM hosts WHERE host=\"%1\";";
+const static QString INSERT_INTO_HOSTS = "INSERT INTO hosts(host, status) VALUES(\"%1\", %2);";
 
 DBManager::DBManager(QObject *parent) :
     QObject(parent)
@@ -50,10 +51,8 @@ DBManager::DBManager(QObject *parent) :
     db.setDatabaseName(dbPath + QDir::separator() + DB_NAME + ".sql");
 
     const QDir dir;
-    if (!dir.exists(dbPath))
-    {
-        if (!dir.mkpath(dbPath))
-        {
+    if (!dir.exists(dbPath)) {
+        if (!dir.mkpath(dbPath)) {
             qCritical("Cannot create data folder!");
         }
     }
@@ -67,14 +66,25 @@ DBManager::DBManager(QObject *parent) :
 
 DBManager::~DBManager()
 {
+    delete m_model;
     db.close();
+}
+
+void DBManager::clearHistory()
+{
+    QSqlQuery clearHistory(db);
+    if (!clearHistory.exec(CLEAR_HISTORY)) {
+        qCritical("Cannot clear history");
+    }
+    if (m_model) {
+        m_model->refresh();
+    }
 }
 
 void DBManager::init()
 {
     QSqlQuery createTable(db);
-    if (!createTable.exec(CREATE_HOSTS_TABLE))
-    {
+    if (!createTable.exec(CREATE_HOSTS_TABLE)) {
         qCritical("Cannot create table!");
     }
 }

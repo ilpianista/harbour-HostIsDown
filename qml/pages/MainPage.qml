@@ -60,6 +60,13 @@ Page {
         anchors.fill: parent
         contentHeight: column.height
 
+        PullDownMenu {
+            MenuItem {
+                text: qsTr("Clear history")
+                onClicked: db.clearHistory()
+            }
+        }
+
         Column {
             id: column
             width: parent.width

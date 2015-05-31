@@ -41,6 +41,7 @@ public:
     explicit DBManager(QObject *parent = 0);
     virtual ~DBManager();
 
+    Q_INVOKABLE void clearHistory();
     HostsSqlModel* recentHosts();
 
 public Q_SLOTS:

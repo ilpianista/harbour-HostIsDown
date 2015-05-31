@@ -41,6 +41,7 @@ int main(int argc, char *argv[])
     QQuickView *view = SailfishApp::createView();
 
     DBManager db;
+    view->rootContext()->setContextProperty("db", &db);
     QSqlQueryModel* recentHosts = db.recentHosts();
     view->rootContext()->setContextProperty("recentHosts", recentHosts);
 
