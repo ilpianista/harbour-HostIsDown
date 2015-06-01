@@ -43,7 +43,8 @@ const static QString DELETE_HOST = "DELETE FROM hosts WHERE host=\"%1\";";
 const static QString INSERT_INTO_HOSTS = "INSERT INTO hosts(host, status) VALUES(\"%1\", %2);";
 
 DBManager::DBManager(QObject *parent) :
-    QObject(parent)
+    QObject(parent),
+    m_model(0)
 {
     db = QSqlDatabase::addDatabase("QSQLITE");
 
