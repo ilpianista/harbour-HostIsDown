@@ -1,7 +1,7 @@
 /*
   The MIT License (MIT)
 
-  Copyright (c) 2014 Andrea Scarpino <me@andreascarpino.it>
+  Copyright (c) 2015 Andrea Scarpino <me@andreascarpino.it>
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
@@ -22,45 +22,51 @@
   SOFTWARE.
 */
 
-#include "pingaction.h"
+#include "hostsmanager.h"
 
 #include <QDebug>
-#include <QUrl>
+#include <QEventLoop>
 
-PingAction::PingAction(QObject *parent) :
+#include "pingaction.h"
+
+HostsManager::HostsManager(QObject *parent) :
     QObject(parent),
-    m_process(new QProcess(this)), m_host(QString())
+    db(0)
 {
-    connect(m_process, SIGNAL(finished(int)), this, SLOT(slotResult(int)));
+    db = new DBManager;
 }
 
-PingAction::~PingAction()
+HostsManager::~HostsManager()
 {
-    if (m_process->state() == QProcess::Running) {
-        m_process->kill();
-    }
-
-    delete m_process;
+    delete db;
 }
 
-void PingAction::ping(const QString &host, const bool ipv6)
+void HostsManager::clearHistory()
 {
-    const QUrl url(host);
-    if (url.isValid()) {
-        m_host = host;
-        if (ipv6) {
-            qDebug() << "Pinging" << host << "using IPv6";
-            m_process->start("/bin/ping6 -c 1 " + host);
-        } else {
-            qDebug() << "Pinging" << host << "using IPv4";
-            m_process->start("/bin/ping -c 1 " + host);
-        }
-    } else {
-        qDebug() << "Not a valid URL:" << host;
-    }
+    db->clearHistory();
 }
 
-void PingAction::slotResult(int exitCode)
+void HostsManager::ping(const QString &host, const bool ipv6)
 {
-    emit result(m_host, exitCode);
+    PingAction ping;
+    ping.ping(host, ipv6);
+
+    QEventLoop loop;
+    connect(&ping, SIGNAL(result(QString,int)), this, SIGNAL(pingResult(QString,int)));
+    connect(&ping, SIGNAL(result(QString,int)), db, SLOT(insert(QString, int)));
+    connect(&ping, SIGNAL(result(QString,int)), &loop, SLOT(quit()));
+
+    // Wait for PingAction to finish
+    loop.exec();
+}
+
+void HostsManager::pingLast()
+{
+    const QVariant last = db->lastHost();
+    ping(last.toString(), false);
+}
+
+HostsSqlModel *HostsManager::recentHosts()
+{
+    return db->recentHosts();
 }

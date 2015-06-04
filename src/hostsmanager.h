@@ -1,7 +1,7 @@
 /*
   The MIT License (MIT)
 
-  Copyright (c) 2014 Andrea Scarpino <me@andreascarpino.it>
+  Copyright (c) 2015 Andrea Scarpino <me@andreascarpino.it>
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
@@ -22,45 +22,31 @@
   SOFTWARE.
 */
 
-#include "pingaction.h"
+#ifndef HOSTSMANAGER_H
+#define HOSTSMANAGER_H
 
-#include <QDebug>
-#include <QUrl>
+#include <QObject>
 
-PingAction::PingAction(QObject *parent) :
-    QObject(parent),
-    m_process(new QProcess(this)), m_host(QString())
+#include "dbmanager.h"
+
+class HostsManager : public QObject
 {
-    connect(m_process, SIGNAL(finished(int)), this, SLOT(slotResult(int)));
-}
+    Q_OBJECT
+public:
+    explicit HostsManager(QObject *parent = 0);
+    virtual ~HostsManager();
 
-PingAction::~PingAction()
-{
-    if (m_process->state() == QProcess::Running) {
-        m_process->kill();
-    }
+    Q_INVOKABLE void clearHistory();
+    Q_INVOKABLE void ping(const QString &host, const bool ipv6);
+    Q_INVOKABLE void pingLast();
+    HostsSqlModel* recentHosts();
 
-    delete m_process;
-}
+Q_SIGNALS:
+    void pingResult(const QString &host, int exitCode);
 
-void PingAction::ping(const QString &host, const bool ipv6)
-{
-    const QUrl url(host);
-    if (url.isValid()) {
-        m_host = host;
-        if (ipv6) {
-            qDebug() << "Pinging" << host << "using IPv6";
-            m_process->start("/bin/ping6 -c 1 " + host);
-        } else {
-            qDebug() << "Pinging" << host << "using IPv4";
-            m_process->start("/bin/ping -c 1 " + host);
-        }
-    } else {
-        qDebug() << "Not a valid URL:" << host;
-    }
-}
+private:
+    DBManager *db;
 
-void PingAction::slotResult(int exitCode)
-{
-    emit result(m_host, exitCode);
-}
+};
+
+#endif // HOSTSMANAGER_H

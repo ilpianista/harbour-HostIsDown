@@ -6,7 +6,8 @@ SOURCES += \
     src/main.cpp \
     src/pingaction.cpp \
     src/dbmanager.cpp \
-    src/hostssqlmodel.cpp
+    src/hostssqlmodel.cpp \
+    src/hostsmanager.cpp
 
 OTHER_FILES += \
     qml/cover/CoverPage.qml \
@@ -25,6 +26,7 @@ TRANSLATIONS += translations/harbour-hostisdown-it.ts
 HEADERS += \
     src/pingaction.h \
     src/dbmanager.h \
-    src/hostssqlmodel.h
+    src/hostssqlmodel.h \
+    src/hostsmanager.h
 
 QT += sql
