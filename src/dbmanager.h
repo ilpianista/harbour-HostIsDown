@@ -37,10 +37,11 @@ public:
     virtual ~DBManager();
 
     void clearHistory();
-    void insert(const QString &host, const int status);
+    void insert(const QString &host, const int status, const bool ipv6);
 
 private:
     void init();
+    int readDBVersion() const;
 
     QSqlDatabase db;
 };

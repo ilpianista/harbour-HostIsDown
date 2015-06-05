@@ -38,6 +38,7 @@ public:
 
     Q_INVOKABLE void clearHistory();
     Q_INVOKABLE void ping(const QString &host, const bool ipv6);
+    Q_INVOKABLE void pingAll();
     Q_INVOKABLE void pingLast();
     HostsSqlModel* recentHosts();
 
@@ -45,7 +46,7 @@ Q_SIGNALS:
     void pingResult(const QString &host, const int exitCode);
 
 protected Q_SLOTS:
-    void slotResult(const QString &host, const int exitCode);
+    void slotResult(const QString &host, const int exitCode, const bool ipv6);
 
 private:
     DBManager *m_db;

@@ -29,7 +29,7 @@
 
 PingAction::PingAction(QObject *parent) :
     QObject(parent),
-    m_process(new QProcess(this)), m_host(QString())
+    m_process(new QProcess(this)), m_host(QString()), m_ipv6(false)
 {
     connect(m_process, SIGNAL(finished(int)), this, SLOT(slotResult(int)));
 }
@@ -48,6 +48,7 @@ void PingAction::ping(const QString &host, const bool ipv6)
     const QUrl url(host);
     if (url.isValid()) {
         m_host = host;
+        m_ipv6 = ipv6;
         if (ipv6) {
             qDebug() << "Pinging" << host << "using IPv6";
             m_process->start("/bin/ping6 -c 1 " + host);
@@ -62,5 +63,5 @@ void PingAction::ping(const QString &host, const bool ipv6)
 
 void PingAction::slotResult(const int exitCode)
 {
-    emit result(m_host, exitCode);
+    emit result(m_host, exitCode, m_ipv6);
 }

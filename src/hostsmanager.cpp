@@ -26,6 +26,7 @@
 
 #include <QDebug>
 #include <QEventLoop>
+#include <QSqlRecord>
 
 #include "pingaction.h"
 
@@ -47,14 +48,28 @@ void HostsManager::clearHistory()
     m_model->refresh();
 }
 
+void HostsManager::pingAll()
+{
+    QVariantMap pairs;
+    for (int i = m_model->rowCount() - 1; i >= 0; i--) {
+        const QSqlRecord host = m_model->record(i);
+        pairs.insert(host.value("host").toString(), host.value("ipv6"));
+    }
+
+    Q_FOREACH (const QString host, pairs.keys()) {
+        qDebug() << host << pairs.value(host).toBool();
+        ping(host, pairs.value(host).toBool());
+    }
+}
+
 void HostsManager::ping(const QString &host, const bool ipv6)
 {
     PingAction ping;
     ping.ping(host, ipv6);
 
     QEventLoop loop;
-    connect(&ping, SIGNAL(result(QString,int)), this, SLOT(slotResult(QString, int)));
-    connect(&ping, SIGNAL(result(QString,int)), &loop, SLOT(quit()));
+    connect(&ping, SIGNAL(result(QString,int,bool)), this, SLOT(slotResult(QString,int,bool)));
+    connect(&ping, SIGNAL(result(QString,int,bool)), &loop, SLOT(quit()));
 
     // Wait for PingAction to finish
     loop.exec();
@@ -62,8 +77,8 @@ void HostsManager::ping(const QString &host, const bool ipv6)
 
 void HostsManager::pingLast()
 {
-    const QVariant last = m_model->data(m_model->index(0, 0));
-    ping(last.toString(), false);
+    const QSqlRecord last = m_model->record(0);
+    ping(last.value("host").toString(), last.value("ipv6").toBool());
 }
 
 HostsSqlModel *HostsManager::recentHosts()
@@ -73,9 +88,9 @@ HostsSqlModel *HostsManager::recentHosts()
     return m_model;
 }
 
-void HostsManager::slotResult(const QString &host, const int exitCode)
+void HostsManager::slotResult(const QString &host, const int exitCode, const bool ipv6)
 {
-    m_db->insert(host, exitCode);
+    m_db->insert(host, exitCode, ipv6);
     m_model->refresh();
 
     emit pingResult(host, exitCode);

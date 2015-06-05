@@ -28,6 +28,7 @@ const static char* COLUMN_NAMES[] = {
     "host",
     "status",
     "timestamp",
+    "ipv6",
     NULL
 };
 const static QString SQL_SELECT = "SELECT * FROM hosts ORDER BY timestamp DESC;";

@@ -51,17 +51,31 @@ Page {
         }
     }
 
+    function defaults() {
+        target.text = "";
+        useIpv6.checked = false;
+    }
+
     SilicaFlickable {
         anchors.fill: parent
         contentHeight: column.height
 
         PullDownMenu {
             MenuItem {
+                text: qsTr("Ping all")
+
+                onClicked: {
+                    defaults();
+                    manager.pingAll()
+                }
+            }
+
+            MenuItem {
                 text: qsTr("Clear history")
 
                 onClicked: {
+                    defaults();
                     manager.clearHistory()
-                    target.text = ""
                 }
             }
         }
@@ -83,15 +97,15 @@ Page {
 
                 onTextChanged: {
                     if (target.text.match('([a-zA-Z1-9]{1,4}:){5}[a-zA-Z1-9]{1,4}')) {
-                        ipv6.checked = true;
+                        useIpv6.checked = true;
                     } else if (target.text.match('([1-9]{1,3}.){3}[1-9]{1,3}')) {
-                        ipv6.checked = false;
+                        useIpv6.checked = false;
                     }
                 }
             }
 
             TextSwitch {
-                id: ipv6
+                id: useIpv6
                 text: qsTr("IPv6")
             }
 
@@ -109,7 +123,7 @@ Page {
                     errorMsg.text = "";
                     if (target.text.length !== 0) {
                         button.enabled = false;
-                        manager.ping(target.text, ipv6.checked);
+                        manager.ping(target.text, useIpv6.checked);
                     }
                 }
             }

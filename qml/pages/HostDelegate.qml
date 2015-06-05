@@ -45,5 +45,6 @@ BackgroundItem {
     onClicked: {
         console.log("Selected host " + host);
         target.text = host;
+        useIpv6.checked = ipv6;
     }
 }
