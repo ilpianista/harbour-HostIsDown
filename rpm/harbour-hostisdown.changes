@@ -1,3 +1,6 @@
+* Fri Jun 05 2015 Andrea Scarpino <me@andreascarpino.it> 0.4-1
+- Active cover to ping last pinged host
+
 * Sun May 31 2015 Andrea Scarpino <me@andreascarpino.it> 0.3-1
 - Show history of pinged hosts
 - Do not invoke ping action if there's no text

@@ -26,11 +26,51 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 CoverBackground {
-    Label {
-        id: label
-        anchors.centerIn: parent
-        text: qsTr("Ping It!")
+
+    Connections {
+        target: manager
+
+        onPingResult: {
+            console.log("Ping reply for " + host + " is " + exitCode);
+            hostLabel.text = host;
+
+            switch (exitCode) {
+            case 0:
+                statusLabel.text = qsTr("is UP!");
+                statusLabel.color = Theme.secondaryColor;
+                break;
+            case 2:
+                statusLabel.text = qsTr("is UNKNOWN!");
+                statusLabel.color = Theme.secondaryHighlightColor;
+                break;
+            case 1:
+            default:
+                statusLabel.text = qsTr("is DOWN!");
+                statusLabel.color = Theme.highlightColor;
+            }
+        }
     }
+
+    Column {
+        anchors.centerIn: parent
+        width: parent.width
+
+        Label {
+            id: hostLabel
+            width: parent.width
+            wrapMode: Text.Wrap
+            font.pixelSize: 24
+            horizontalAlignment: Text.AlignHCenter
+        }
+
+        Label {
+            id: statusLabel
+            width: parent.width
+            text: qsTr("Ping It!")
+            horizontalAlignment: Text.AlignHCenter
+        }
+    }
+
 
     CoverActionList {
         id: coverAction

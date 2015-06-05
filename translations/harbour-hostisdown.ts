@@ -4,7 +4,22 @@
 <context>
     <name>CoverPage</name>
     <message>
-        <location filename="../qml/cover/CoverPage.qml" line="32"/>
+        <location filename="../qml/cover/CoverPage.qml" line="39"/>
+        <source>is UP!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/cover/CoverPage.qml" line="43"/>
+        <source>is UNKNOWN!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/cover/CoverPage.qml" line="48"/>
+        <source>is DOWN!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/cover/CoverPage.qml" line="69"/>
         <source>Ping It!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -18,7 +33,7 @@
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="44"/>
-        <source>The host is UNKNOWN</source>
+        <source>The host is UNKNOWN!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

@@ -31,7 +31,7 @@ Page {
         target: manager
 
         onPingResult: {
-            console.log("Ping reply is " + exitCode);
+            console.log("Ping reply for " + host + " is " + exitCode);
             button.enabled = true;
 
             switch (exitCode) {
@@ -41,7 +41,7 @@ Page {
                 break;
             case 2:
                 errorMsg.color = Theme.secondaryHighlightColor;
-                errorMsg.text = qsTr("The host is UNKNOWN");
+                errorMsg.text = qsTr("The host is UNKNOWN!");
                 break;
             case 1:
             default:
