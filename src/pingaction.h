@@ -37,7 +37,7 @@ public:
     void ping(const QString &host, const bool ipv6);
 
 public Q_SLOTS:
-    void slotResult(int exitCode);
+    void slotResult(const int exitCode);
 
 Q_SIGNALS:
     void result(const QString &host, const int exitCode);

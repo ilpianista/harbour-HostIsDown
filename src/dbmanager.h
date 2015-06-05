@@ -37,17 +37,12 @@ public:
     virtual ~DBManager();
 
     void clearHistory();
-    const QVariant lastHost();
-    HostsSqlModel* recentHosts();
-
-public Q_SLOTS:
     void insert(const QString &host, const int status);
 
 private:
     void init();
 
     QSqlDatabase db;
-    HostsSqlModel* m_model;
 };
 
 #endif // DBMANAGER_H

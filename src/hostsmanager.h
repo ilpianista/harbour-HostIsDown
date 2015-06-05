@@ -42,10 +42,14 @@ public:
     HostsSqlModel* recentHosts();
 
 Q_SIGNALS:
-    void pingResult(const QString &host, int exitCode);
+    void pingResult(const QString &host, const int exitCode);
+
+protected Q_SLOTS:
+    void slotResult(const QString &host, const int exitCode);
 
 private:
-    DBManager *db;
+    DBManager *m_db;
+    HostsSqlModel* m_model;
 
 };
 

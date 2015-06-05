@@ -58,7 +58,11 @@ Page {
         PullDownMenu {
             MenuItem {
                 text: qsTr("Clear history")
-                onClicked: manager.clearHistory()
+
+                onClicked: {
+                    manager.clearHistory()
+                    target.text = ""
+                }
             }
         }
 

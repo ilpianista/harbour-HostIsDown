@@ -31,19 +31,20 @@
 
 HostsManager::HostsManager(QObject *parent) :
     QObject(parent),
-    db(0)
+    m_db(new DBManager(this)), m_model(new HostsSqlModel(this))
 {
-    db = new DBManager;
 }
 
 HostsManager::~HostsManager()
 {
-    delete db;
+    delete m_model;
+    delete m_db;
 }
 
 void HostsManager::clearHistory()
 {
-    db->clearHistory();
+    m_db->clearHistory();
+    m_model->refresh();
 }
 
 void HostsManager::ping(const QString &host, const bool ipv6)
@@ -52,8 +53,7 @@ void HostsManager::ping(const QString &host, const bool ipv6)
     ping.ping(host, ipv6);
 
     QEventLoop loop;
-    connect(&ping, SIGNAL(result(QString,int)), this, SIGNAL(pingResult(QString,int)));
-    connect(&ping, SIGNAL(result(QString,int)), db, SLOT(insert(QString, int)));
+    connect(&ping, SIGNAL(result(QString,int)), this, SLOT(slotResult(QString, int)));
     connect(&ping, SIGNAL(result(QString,int)), &loop, SLOT(quit()));
 
     // Wait for PingAction to finish
@@ -62,11 +62,21 @@ void HostsManager::ping(const QString &host, const bool ipv6)
 
 void HostsManager::pingLast()
 {
-    const QVariant last = db->lastHost();
+    const QVariant last = m_model->data(m_model->index(0, 0));
     ping(last.toString(), false);
 }
 
 HostsSqlModel *HostsManager::recentHosts()
 {
-    return db->recentHosts();
+    m_model = new HostsSqlModel(this);
+
+    return m_model;
+}
+
+void HostsManager::slotResult(const QString &host, const int exitCode)
+{
+    m_db->insert(host, exitCode);
+    m_model->refresh();
+
+    emit pingResult(host, exitCode);
 }

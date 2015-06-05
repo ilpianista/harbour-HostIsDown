@@ -60,7 +60,7 @@ void PingAction::ping(const QString &host, const bool ipv6)
     }
 }
 
-void PingAction::slotResult(int exitCode)
+void PingAction::slotResult(const int exitCode)
 {
     emit result(m_host, exitCode);
 }

@@ -38,8 +38,7 @@ const static QString DELETE_HOST = "DELETE FROM hosts WHERE host=\"%1\";";
 const static QString INSERT_INTO_HOSTS = "INSERT INTO hosts(host, status) VALUES(\"%1\", %2);";
 
 DBManager::DBManager(QObject *parent) :
-    QObject(parent),
-    m_model(0)
+    QObject(parent)
 {
     db = QSqlDatabase::addDatabase("QSQLITE");
 
@@ -62,7 +61,6 @@ DBManager::DBManager(QObject *parent) :
 
 DBManager::~DBManager()
 {
-    delete m_model;
     db.close();
 }
 
@@ -72,14 +70,6 @@ void DBManager::clearHistory()
     if (!clearHistory.exec(CLEAR_HISTORY)) {
         qCritical("Cannot clear history");
     }
-    if (m_model) {
-        m_model->refresh();
-    }
-}
-
-const QVariant DBManager::lastHost()
-{
-    return m_model->data(m_model->index(0, 0));
 }
 
 void DBManager::init()
@@ -90,13 +80,6 @@ void DBManager::init()
     }
 }
 
-HostsSqlModel* DBManager::recentHosts()
-{
-    m_model = new HostsSqlModel(this);
-
-    return m_model;
-}
-
 void DBManager::insert(const QString &host, const int status)
 {
     QSqlQuery query(db);
@@ -105,7 +88,5 @@ void DBManager::insert(const QString &host, const int status)
     }
     if (!query.exec(INSERT_INTO_HOSTS.arg(host).arg(status))) {
         qCritical("Cannot save data!");
-    } else {
-        m_model->refresh();
     }
 }
