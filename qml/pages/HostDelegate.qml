@@ -26,19 +26,30 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 BackgroundItem {
-    width: contentItem.childrenRect.width
+    id: item
+    width: parent.width
     height: contentItem.childrenRect.height
 
-    Label {
-        font.pixelSize: Theme.fontSizeSmall
-        text: host + " [" + timestamp + "]"
-        color: {
-            switch (status) {
-            case 0: return Theme.secondaryColor;
-            case 2: return Theme.secondaryHighlightColor;
-            case 1:
-            default: return Theme.highlightColor;
+    Column {
+        Label {
+            font.pixelSize: Theme.fontSizeMedium
+            text: host
+            wrapMode: Text.Wrap
+            color: {
+                switch (status) {
+                case 0: return Theme.secondaryColor;
+                case 2: return Theme.secondaryHighlightColor;
+                case 1:
+                default: return Theme.highlightColor;
+                }
             }
+        }
+
+        Label {
+            width: item.width
+            font.pixelSize: Theme.fontSizeSmall
+            text: Qt.formatDateTime(timestamp.toLocaleString(Qt.locale()), "hh:mm, dd/MM/yyyy")
+            horizontalAlignment: Text.AlignRight
         }
     }
 

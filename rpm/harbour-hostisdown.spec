@@ -13,7 +13,7 @@ Name:       harbour-hostisdown
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Check if the desired host is up or not
-Version:    0.3
+Version:    0.4
 Release:    1
 Group:      Qt/Qt
 License:    MIT
