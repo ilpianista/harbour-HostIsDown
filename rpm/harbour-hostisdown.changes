@@ -2,6 +2,8 @@
 - Active cover to ping last pinged host
 - Add a 'Ping all' menu action
 - Restore ipv6 flag when pinging an old host
+- Allow to remove an host from the history
+- Add a busy indicator while pinging an host
 
 * Sun May 31 2015 Andrea Scarpino <me@andreascarpino.it> 0.3-1
 - Show history of pinged hosts
