@@ -27,7 +27,7 @@ import Sailfish.Silica 1.0
 
 ListItem {
     id: item
-    width: parent.width
+    width: parent ? parent.width : contentItem.childrenRect.width
     height: contentItem.childrenRect.height
     menu: itemMenu
 
