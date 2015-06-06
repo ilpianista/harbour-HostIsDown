@@ -48,7 +48,7 @@ BackgroundItem {
         Label {
             width: item.width
             font.pixelSize: Theme.fontSizeSmall
-            text: Qt.formatDateTime(timestamp.toLocaleString(Qt.locale()), "hh:mm, dd/MM/yyyy")
+            text: formatDate(timestamp)
             horizontalAlignment: Text.AlignRight
         }
     }
@@ -57,5 +57,17 @@ BackgroundItem {
         console.log("Selected host " + host);
         target.text = host;
         useIpv6.checked = ipv6;
+    }
+
+    /**
+      * Formats a datetime to a string with a custom pattern which updates
+      * hours and minutes to user timezone.
+      */
+    function formatDate(timestamp) {
+        var date = new Date(timestamp);
+        var toLocalTime = new Date(date.getTime() + (date.getTimezoneOffset() * 60000));
+        toLocalTime.setHours(date.getHours() - (date.getTimezoneOffset() / 60));
+
+        return Qt.formatDateTime(toLocalTime, "hh:mm, dd/MM/yyyy");
     }
 }
