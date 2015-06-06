@@ -48,6 +48,12 @@ void HostsManager::clearHistory()
     m_model->refresh();
 }
 
+void HostsManager::forget(const QString &host)
+{
+    m_db->deleteHost(host);
+    m_model->refresh();
+}
+
 void HostsManager::pingAll()
 {
     QVariantMap pairs;

@@ -37,6 +37,7 @@ public:
     virtual ~DBManager();
 
     void clearHistory();
+    void deleteHost(const QString &host);
     void insert(const QString &host, const int status, const bool ipv6);
 
 private:

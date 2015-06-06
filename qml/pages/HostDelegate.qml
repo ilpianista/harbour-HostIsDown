@@ -25,10 +25,11 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 
-BackgroundItem {
+ListItem {
     id: item
     width: parent.width
     height: contentItem.childrenRect.height
+    menu: itemMenu
 
     Column {
         Label {
@@ -53,10 +54,24 @@ BackgroundItem {
         }
     }
 
+    Component {
+        id: itemMenu
+
+        ContextMenu {
+            MenuItem {
+                text: qsTr("Forget")
+                onClicked: forget(host)
+            }
+        }
+    }
+
     onClicked: {
-        console.log("Selected host " + host);
         target.text = host;
         useIpv6.checked = ipv6;
+    }
+
+    function forget(host) {
+        remorseAction("Deleting", function() { manager.forget(host) }, 3000);
     }
 
     /**

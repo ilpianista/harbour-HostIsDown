@@ -32,6 +32,10 @@ Page {
 
         onPingResult: {
             console.log("Ping reply for " + host + " is " + exitCode);
+            target.enabled = true;
+            useIpv6.enabled = true;
+            busy.running = false;
+            busy.visible = false;
             button.enabled = true;
 
             switch (exitCode) {
@@ -54,6 +58,7 @@ Page {
     function defaults() {
         target.text = "";
         useIpv6.checked = false;
+        errorMsg.text = "";
     }
 
     SilicaFlickable {
@@ -114,6 +119,12 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
             }
 
+            BusyIndicator {
+                id: busy
+                visible: false
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+
             Button {
                 id: button
                 text: qsTr("Ping it")
@@ -122,6 +133,10 @@ Page {
                 onClicked: {
                     errorMsg.text = "";
                     if (target.text.length !== 0) {
+                        target.enabled = false;
+                        useIpv6.enabled = false;
+                        busy.visible = true;
+                        busy.running = true;
                         button.enabled = false;
                         manager.ping(target.text, useIpv6.checked);
                     }

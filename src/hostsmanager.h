@@ -37,6 +37,7 @@ public:
     virtual ~HostsManager();
 
     Q_INVOKABLE void clearHistory();
+    Q_INVOKABLE void forget(const QString &host);
     Q_INVOKABLE void ping(const QString &host, const bool ipv6);
     Q_INVOKABLE void pingAll();
     Q_INVOKABLE void pingLast();

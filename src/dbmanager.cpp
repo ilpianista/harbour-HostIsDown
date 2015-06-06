@@ -77,6 +77,14 @@ void DBManager::clearHistory()
     }
 }
 
+void DBManager::deleteHost(const QString &host)
+{
+    QSqlQuery query(db);
+    if (!query.exec(DELETE_HOST.arg(host))) {
+        qCritical("Cannot delete data!");
+    }
+}
+
 void DBManager::init()
 {
     QSqlQuery query(db);
@@ -117,15 +125,14 @@ int DBManager::readDBVersion() const {
 
 void DBManager::insert(const QString &host, const int status, const bool ipv6)
 {
-    QSqlQuery query(db);
-    if (!query.exec(DELETE_HOST.arg(host))) {
-        qCritical("Cannot delete data!");
-    }
+    deleteHost(host);
 
     int useIpv6 = 0;
     if (ipv6) {
         useIpv6 = 1;
     }
+
+    QSqlQuery query(db);
     if (!query.exec(INSERT_INTO_HOSTS.arg(host).arg(status).arg(useIpv6))) {
         qCritical("Cannot save data!");
     }
