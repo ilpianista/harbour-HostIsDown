@@ -30,9 +30,8 @@
 
 int main(int argc, char *argv[])
 {
-    QGuiApplication *app = SailfishApp::application(argc, argv);
-
-    QQuickView *view = SailfishApp::createView();
+    QScopedPointer<QGuiApplication> app(SailfishApp::application(argc, argv));
+    QScopedPointer<QQuickView> view(SailfishApp::createView());
 
     HostsManager manager;
     view->rootContext()->setContextProperty("manager", &manager);
