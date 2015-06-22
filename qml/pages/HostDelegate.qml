@@ -27,12 +27,11 @@ import Sailfish.Silica 1.0
 
 ListItem {
     id: item
-    width: parent ? parent.width : contentItem.childrenRect.width
-    height: contentItem.childrenRect.height
     menu: itemMenu
 
     Column {
         Label {
+            x: Theme.horizontalPageMargin
             font.pixelSize: Theme.fontSizeMedium
             text: host
             wrapMode: Text.Wrap
@@ -47,21 +46,19 @@ ListItem {
         }
 
         Label {
-            width: item.width
+            width: item.width - Theme.horizontalPageMargin
             font.pixelSize: Theme.fontSizeSmall
             text: formatDate(timestamp)
             horizontalAlignment: Text.AlignRight
         }
     }
 
-    Component {
+    ContextMenu {
         id: itemMenu
 
-        ContextMenu {
-            MenuItem {
-                text: qsTr("Forget")
-                onClicked: forget(host)
-            }
+        MenuItem {
+            text: qsTr("Forget")
+            onClicked: forget(host)
         }
     }
 

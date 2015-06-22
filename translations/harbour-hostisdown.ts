@@ -27,7 +27,7 @@
 <context>
     <name>HostDelegate</name>
     <message>
-        <location filename="../qml/pages/HostDelegate.qml" line="62"/>
+        <location filename="../qml/pages/HostDelegate.qml" line="60"/>
         <source>Forget</source>
         <translation type="unfinished"></translation>
     </message>
