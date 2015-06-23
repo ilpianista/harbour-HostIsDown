@@ -68,7 +68,7 @@ ListItem {
     }
 
     function forget(host) {
-        remorseAction("Deleting", function() { manager.forget(host) }, 3000);
+        remorseAction(qsTr("Deleting"), function() { manager.forget(host) }, 3000);
     }
 
     /**

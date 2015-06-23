@@ -107,6 +107,10 @@ Page {
                         useIpv6.checked = false;
                     }
                 }
+
+                EnterKey.iconSource: "image://theme/icon-m-mobile-network"
+                EnterKey.enabled: text.length > 0
+                EnterKey.onClicked: pingHost();
             }
 
             TextSwitch {
@@ -131,14 +135,8 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
 
                 onClicked: {
-                    errorMsg.text = "";
                     if (target.text.length !== 0) {
-                        target.enabled = false;
-                        useIpv6.enabled = false;
-                        busy.visible = true;
-                        busy.running = true;
-                        button.enabled = false;
-                        manager.ping(target.text, useIpv6.checked);
+                        pingHost();
                     }
                 }
             }
@@ -152,5 +150,15 @@ Page {
                 delegate: HostDelegate {}
             }
         }
+    }
+
+    function pingHost() {
+        errorMsg.text = "";
+        target.enabled = false;
+        useIpv6.enabled = false;
+        busy.visible = true;
+        busy.running = true;
+        button.enabled = false;
+        manager.ping(target.text, useIpv6.checked);
     }
 }
