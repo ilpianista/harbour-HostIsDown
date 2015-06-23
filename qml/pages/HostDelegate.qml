@@ -56,6 +56,22 @@ ListItem {
     ContextMenu {
         id: itemMenu
 
+        Label {
+            width: parent.width
+            color: Theme.highlightColor;
+            font.pixelSize: Theme.fontSizeTiny
+            horizontalAlignment: Text.AlignHCenter
+
+            text: {
+                switch (status) {
+                case 0: return qsTr("It was UP");
+                case 2: return qsTr("It was DOWN");
+                case 1:
+                default: return qsTr("It was UNKNOWN");
+                }
+            }
+        }
+
         MenuItem {
             text: qsTr("Forget")
             onClicked: forget(host)
@@ -80,6 +96,6 @@ ListItem {
         var toLocalTime = new Date(date.getTime() + (date.getTimezoneOffset() * 60000));
         toLocalTime.setHours(date.getHours() - (date.getTimezoneOffset() / 60));
 
-        return Qt.formatDateTime(toLocalTime, "hh:mm, dd/MM/yyyy");
+        return Qt.formatDateTime(toLocalTime, "hh:mm, dd MMM yyyy");
     }
 }

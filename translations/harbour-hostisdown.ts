@@ -27,12 +27,27 @@
 <context>
     <name>HostDelegate</name>
     <message>
-        <location filename="../qml/pages/HostDelegate.qml" line="60"/>
+        <location filename="../qml/pages/HostDelegate.qml" line="67"/>
+        <source>It was UP</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/HostDelegate.qml" line="68"/>
+        <source>It was DOWN</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/HostDelegate.qml" line="70"/>
+        <source>It was UNKNOWN</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/HostDelegate.qml" line="76"/>
         <source>Forget</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/HostDelegate.qml" line="71"/>
+        <location filename="../qml/pages/HostDelegate.qml" line="87"/>
         <source>Deleting</source>
         <translation type="unfinished"></translation>
     </message>
