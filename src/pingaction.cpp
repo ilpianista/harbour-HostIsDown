@@ -51,10 +51,10 @@ void PingAction::ping(const QString &host, const bool ipv6)
         m_ipv6 = ipv6;
         if (ipv6) {
             qDebug() << "Pinging" << host << "using IPv6";
-            m_process->start("/bin/ping6 -c 1 " + host);
+            m_process->start(QStringLiteral("/bin/ping6 -c 1 %1").arg(host));
         } else {
             qDebug() << "Pinging" << host << "using IPv4";
-            m_process->start("/bin/ping -c 1 " + host);
+            m_process->start(QStringLiteral("/bin/ping -c 1 %1").arg(host));
         }
     } else {
         qDebug() << "Not a valid URL:" << host;

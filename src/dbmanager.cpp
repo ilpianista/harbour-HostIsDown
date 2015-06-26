@@ -31,24 +31,24 @@
 #include <QSqlQuery>
 #include <QSqlRecord>
 
-const static QString DB_NAME = "hostisdown";
+const static QString DB_NAME = QStringLiteral("hostisdown");
 const static int DB_VERSION = 1;
 
-const static QString ALTER_TABLE_IPV6 = "ALTER TABLE hosts ADD ipv6 SMALLINT;";
-const static QString CLEAR_HISTORY = "DELETE FROM hosts;";
-const static QString CREATE_HOSTS_TABLE = "CREATE TABLE IF NOT EXISTS hosts(host TEXT PRIMARY KEY, status SMALLINT, timestamp DATETIME DEFAULT CURRENT_TIMESTAMP, ipv6 SMALLINT);";
-const static QString DELETE_HOST = "DELETE FROM hosts WHERE host=\"%1\";";
-const static QString INSERT_INTO_HOSTS = "INSERT INTO hosts(host, status, ipv6) VALUES(\"%1\", %2, %3);";
-const static QString READ_DB_VERSION = "PRAGMA user_version;";
-const static QString UPDATE_DB_VERSION = "PRAGMA user_version=%1;";
+const static QString ALTER_TABLE_IPV6 = QStringLiteral("ALTER TABLE hosts ADD ipv6 SMALLINT;");
+const static QString CLEAR_HISTORY = QStringLiteral("DELETE FROM hosts;");
+const static QString CREATE_HOSTS_TABLE = QStringLiteral("CREATE TABLE IF NOT EXISTS hosts(host TEXT PRIMARY KEY, status SMALLINT, timestamp DATETIME DEFAULT CURRENT_TIMESTAMP, ipv6 SMALLINT);");
+const static QString DELETE_HOST = QStringLiteral("DELETE FROM hosts WHERE host=\"%1\";");
+const static QString INSERT_INTO_HOSTS = QStringLiteral("INSERT INTO hosts(host, status, ipv6) VALUES(\"%1\", %2, %3);");
+const static QString READ_DB_VERSION = QStringLiteral("PRAGMA user_version;");
+const static QString UPDATE_DB_VERSION = QStringLiteral("PRAGMA user_version=%1;");
 
 DBManager::DBManager(QObject *parent) :
     QObject(parent)
 {
-    db = QSqlDatabase::addDatabase("QSQLITE");
+    db = QSqlDatabase::addDatabase(QStringLiteral("QSQLITE"));
 
     const QString dbPath(QStandardPaths::writableLocation(QStandardPaths::DataLocation));
-    db.setDatabaseName(dbPath + QDir::separator() + DB_NAME + ".sql");
+    db.setDatabaseName(dbPath + QDir::separator() + DB_NAME + QStringLiteral(".sql"));
 
     const QDir dir;
     if (!dir.exists(dbPath)) {

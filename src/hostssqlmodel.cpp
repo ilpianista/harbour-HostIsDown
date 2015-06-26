@@ -31,7 +31,7 @@ const static char* COLUMN_NAMES[] = {
     "ipv6",
     NULL
 };
-const static QString SQL_SELECT = "SELECT * FROM hosts ORDER BY timestamp DESC;";
+const static QString SQL_SELECT = QStringLiteral("SELECT * FROM hosts ORDER BY timestamp DESC;");
 
 HostsSqlModel::HostsSqlModel(QObject *parent):
     QSqlQueryModel(parent)
