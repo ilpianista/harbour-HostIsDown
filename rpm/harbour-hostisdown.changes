@@ -1,3 +1,9 @@
+* Fri Jul 03 2015 Andrea Scarpino <me@andreascarpino.it> 0.5.1-1
+- Landscape support
+
+* Tue Jun 23 2015 Andrea Scarpino <me@andreascarpino.it> 0.5-1
+- Show last status in item's context menu
+
 * Fri Jun 05 2015 Andrea Scarpino <me@andreascarpino.it> 0.4-1
 - Active cover to ping last pinged host
 - Add a 'Ping all' menu action
