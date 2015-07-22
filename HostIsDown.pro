@@ -21,7 +21,8 @@ OTHER_FILES += \
     qml/pages/HostDelegate.qml
 
 CONFIG += sailfishapp_i18n
-TRANSLATIONS += translations/harbour-hostisdown-it.ts
+TRANSLATIONS += translations/harbour-hostisdown-it.ts \
+    translations/harbour-hostisdown-sv.ts
 
 HEADERS += \
     src/pingaction.h \
