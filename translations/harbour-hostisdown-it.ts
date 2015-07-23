@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0'?>
 <!DOCTYPE TS>
-<TS version="2.1">
+<TS version="2.1" language="it">
 <context>
     <name>CoverPage</name>
     <message>
@@ -44,12 +44,12 @@
     <message>
         <location filename="../qml/pages/HostDelegate.qml" line="76"/>
         <source>Forget</source>
-        <translation type="unfinished"></translation>
+        <translation>Dimentica</translation>
     </message>
     <message>
         <location filename="../qml/pages/HostDelegate.qml" line="87"/>
         <source>Deleting</source>
-        <translation type="unfinished"></translation>
+        <translation>Sto cancellando...</translation>
     </message>
 </context>
 <context>
@@ -77,7 +77,7 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="81"/>
         <source>Clear history</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancella cronologia</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="95"/>
@@ -92,7 +92,7 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="120"/>
         <source>IPv6</source>
-        <translation type="unfinished"></translation>
+        <translation>IPv6</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="136"/>
@@ -102,7 +102,7 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="147"/>
         <source>History</source>
-        <translation type="unfinished"></translation>
+        <translation>Cronologia</translation>
     </message>
 </context>
 </TS>
