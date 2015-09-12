@@ -46,10 +46,9 @@ public:
 Q_SIGNALS:
     void pingResult(const QString &host, const int exitCode);
 
-protected Q_SLOTS:
+private:
     void slotResult(const QString &host, const int exitCode, const bool ipv6);
 
-private:
     DBManager *m_db;
     HostsSqlModel* m_model;
 

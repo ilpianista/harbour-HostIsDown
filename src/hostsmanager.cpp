@@ -74,8 +74,8 @@ void HostsManager::ping(const QString &host, const bool ipv6)
     ping.ping(host, ipv6);
 
     QEventLoop loop;
-    connect(&ping, SIGNAL(result(QString,int,bool)), this, SLOT(slotResult(QString,int,bool)));
-    connect(&ping, SIGNAL(result(QString,int,bool)), &loop, SLOT(quit()));
+    connect(&ping, &PingAction::result, this, &HostsManager::slotResult);
+    connect(&ping, &PingAction::result, &loop, &QEventLoop::quit);
 
     // Wait for PingAction to finish
     loop.exec();
@@ -99,5 +99,5 @@ void HostsManager::slotResult(const QString &host, const int exitCode, const boo
     m_db->insert(host, exitCode, ipv6);
     m_model->refresh();
 
-    emit pingResult(host, exitCode);
+    Q_EMIT pingResult(host, exitCode);
 }
