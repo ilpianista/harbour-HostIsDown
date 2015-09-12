@@ -36,13 +36,12 @@ public:
 
     void ping(const QString &host, const bool ipv6);
 
-public Q_SLOTS:
-    void slotResult(const int exitCode);
-
 Q_SIGNALS:
     void result(const QString &host, const int exitCode, const bool ipv6);
 
 private:
+    void pingResult(const int exitCode);
+
     QProcess *m_process;
     QString m_host;
     bool m_ipv6;

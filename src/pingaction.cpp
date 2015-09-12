@@ -31,7 +31,7 @@ PingAction::PingAction(QObject *parent) :
     QObject(parent),
     m_process(new QProcess(this)), m_host(QString()), m_ipv6(false)
 {
-    connect(m_process, SIGNAL(finished(int)), this, SLOT(slotResult(int)));
+    connect(m_process, (void (QProcess::*)(int))&QProcess::finished, this, &PingAction::pingResult);
 }
 
 PingAction::~PingAction()
@@ -49,19 +49,24 @@ void PingAction::ping(const QString &host, const bool ipv6)
     if (url.isValid()) {
         m_host = host;
         m_ipv6 = ipv6;
+
+        QStringList parameters;
+        parameters << QStringLiteral("-c");
+        parameters << QStringLiteral("1");
+        parameters << host;
         if (ipv6) {
             qDebug() << "Pinging" << host << "using IPv6";
-            m_process->start(QStringLiteral("/bin/ping6 -c 1 %1").arg(host));
+            m_process->start(QStringLiteral("/bin/ping6"), parameters);
         } else {
             qDebug() << "Pinging" << host << "using IPv4";
-            m_process->start(QStringLiteral("/bin/ping -c 1 %1").arg(host));
+            m_process->start(QStringLiteral("/bin/ping"), parameters);
         }
     } else {
         qDebug() << "Not a valid URL:" << host;
     }
 }
 
-void PingAction::slotResult(const int exitCode)
+void PingAction::pingResult(const int exitCode)
 {
-    emit result(m_host, exitCode, m_ipv6);
+    Q_EMIT result(m_host, exitCode, m_ipv6);
 }
