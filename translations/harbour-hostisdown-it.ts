@@ -1,27 +1,25 @@
-<?xml version='1.0'?>
-<!DOCTYPE TS>
-<TS version="2.1" language="it">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="it" version="2.1">
 <context>
     <name>CoverPage</name>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="39"/>
         <source>is UP!</source>
-        <translation type="unfinished"></translation>
+        <translation>è ACCESO!</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="43"/>
         <source>is UNKNOWN!</source>
-        <translation type="unfinished"></translation>
+        <translation>non è RAGGIUNGIBILE!</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="48"/>
         <source>is DOWN!</source>
-        <translation type="unfinished"></translation>
+        <translation>è SPENTO!</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="69"/>
         <source>Ping It!</source>
-        <translation type="unfinished"></translation>
+        <translation>Manda un ping!</translation>
     </message>
 </context>
 <context>
@@ -29,17 +27,17 @@
     <message>
         <location filename="../qml/pages/HostDelegate.qml" line="67"/>
         <source>It was UP</source>
-        <translation type="unfinished"></translation>
+        <translation>era ACCESO</translation>
     </message>
     <message>
         <location filename="../qml/pages/HostDelegate.qml" line="68"/>
         <source>It was DOWN</source>
-        <translation type="unfinished"></translation>
+        <translation>era SPENTO</translation>
     </message>
     <message>
         <location filename="../qml/pages/HostDelegate.qml" line="70"/>
         <source>It was UNKNOWN</source>
-        <translation type="unfinished"></translation>
+        <translation>non era RAGGIUNGIBILE</translation>
     </message>
     <message>
         <location filename="../qml/pages/HostDelegate.qml" line="76"/>
@@ -57,22 +55,22 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="46"/>
         <source>The host is UP!</source>
-        <translation type="unfinished"></translation>
+        <translation>La macchina è ACCESA!</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="50"/>
         <source>The host is UNKNOWN!</source>
-        <translation type="unfinished"></translation>
+        <translation>La macchina non è RAGGIUNGIBILE!</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="55"/>
         <source>The host is DOWN!</source>
-        <translation type="unfinished"></translation>
+        <translation>La macchina è SPENTA!</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="72"/>
         <source>Ping all</source>
-        <translation type="unfinished"></translation>
+        <translation>Manda ping a tutti</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="81"/>
@@ -82,12 +80,12 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="95"/>
         <source>Ping any host!</source>
-        <translation type="unfinished"></translation>
+        <translation>Manda un ping!</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="103"/>
         <source>An IP address or hostname</source>
-        <translation type="unfinished"></translation>
+        <translation>Un indirizzo IP o hostname</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="120"/>
@@ -97,7 +95,7 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="136"/>
         <source>Ping it</source>
-        <translation type="unfinished"></translation>
+        <translation>Manda un ping</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="147"/>
