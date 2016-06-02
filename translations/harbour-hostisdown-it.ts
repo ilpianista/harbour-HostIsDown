@@ -71,38 +71,66 @@
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="66"/>
+        <source>Settings</source>
+        <translation>Impostazioni</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MainPage.qml" line="73"/>
         <source>Ping all</source>
         <translation>Manda ping a tutti</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="76"/>
+        <location filename="../qml/pages/MainPage.qml" line="86"/>
         <source>Clear history</source>
         <translation>Cancella cronologia</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="89"/>
+        <location filename="../qml/pages/MainPage.qml" line="104"/>
         <source>Ping any host!</source>
         <translation>Manda un ping!</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="97"/>
+        <location filename="../qml/pages/MainPage.qml" line="112"/>
         <source>An IP address or hostname</source>
         <translation>Un indirizzo IP o hostname</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="117"/>
+        <location filename="../qml/pages/MainPage.qml" line="132"/>
         <source>Use IPv6</source>
-        <translation type="unfinished"></translation>
+        <translation>Usa IPv6</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="133"/>
+        <location filename="../qml/pages/MainPage.qml" line="148"/>
         <source>Ping it</source>
         <translation>Manda un ping</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="141"/>
+        <location filename="../qml/pages/MainPage.qml" line="156"/>
         <source>History</source>
         <translation>Cronologia</translation>
+    </message>
+</context>
+<context>
+    <name>Settings</name>
+    <message>
+        <location filename="../qml/pages/Settings.qml" line="36"/>
+        <source>Settings</source>
+        <translation>Impostazioni</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Settings.qml" line="42"/>
+        <source>Enable poller</source>
+        <translation>Abilita monitor</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Settings.qml" line="43"/>
+        <source>Pings every N minutes all hosts in the history</source>
+        <translation>Effettua un ping ogni N minuti su ogni host nella cronologia</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Settings.qml" line="51"/>
+        <source>Poller interval in minutes</source>
+        <translation>Intervallo del monitor in minuti</translation>
     </message>
 </context>
 </TS>

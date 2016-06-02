@@ -1,7 +1,7 @@
 /*
   The MIT License (MIT)
 
-  Copyright (c) 2015 Andrea Scarpino <me@andreascarpino.it>
+  Copyright (c) 2015-2016 Andrea Scarpino <me@andreascarpino.it>
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
@@ -24,21 +24,35 @@
 
 #include "hostsmanager.h"
 
+#include <QCoreApplication>
+#include <QDebug>
 #include <QEventLoop>
+#include <QSettings>
 #include <QSqlRecord>
+#include <QTimer>
 
 #include "pingaction.h"
 
 HostsManager::HostsManager(QObject *parent) :
-    QObject(parent),
-    m_db(new DBManager(this)), m_model(new HostsSqlModel(this))
+    QObject(parent)
+  , m_db(new DBManager(this))
+  , m_model(new HostsSqlModel(this))
+  , m_timer(0)
 {
+    m_settings = new QSettings(QCoreApplication::organizationDomain(), QCoreApplication::applicationName(), this);
+    setPoller(m_settings->value("Poller", 0).toUInt());
+
+    if (m_timer) {
+        connect(m_timer, &QTimer::timeout, this, &HostsManager::pingAll);
+    }
 }
 
 HostsManager::~HostsManager()
 {
     delete m_model;
     delete m_db;
+    delete m_settings;
+    delete m_timer;
 }
 
 void HostsManager::clearHistory()
@@ -83,6 +97,33 @@ void HostsManager::pingLast()
 {
     const QSqlRecord last = m_model->record(0);
     ping(last.value("host").toString(), last.value("ipv6").toBool());
+}
+
+void HostsManager::setPoller(const quint16 minutes)
+{
+    m_poller = minutes;
+    m_settings->setValue("Poller", minutes);
+
+    if (minutes > 0) {
+        if (!m_timer) {
+            m_timer = new QTimer();
+        } else {
+            m_timer->stop();
+        }
+
+        qDebug() << "Starting a new timer every" << minutes << "minutes";
+        m_timer->start(minutes * 60 * 1000);
+    } else {
+        if (m_timer) {
+            qDebug() << "Stopping the timer";
+            m_timer->stop();
+        }
+    }
+}
+
+quint16 HostsManager::getPoller() const
+{
+    return m_poller;
 }
 
 HostsSqlModel *HostsManager::recentHosts()

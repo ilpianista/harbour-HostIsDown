@@ -1,7 +1,7 @@
 /*
   The MIT License (MIT)
 
-  Copyright (c) 2014-2015 Andrea Scarpino <me@andreascarpino.it>
+  Copyright (c) 2014-2016 Andrea Scarpino <me@andreascarpino.it>
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
@@ -63,20 +63,35 @@ Page {
 
         PullDownMenu {
             MenuItem {
+                text: qsTr("Settings")
+
+                onClicked: pageStack.push(Qt.resolvedUrl("Settings.qml"))
+            }
+
+            MenuItem {
+                id: pingAll
                 text: qsTr("Ping all")
+                enabled: hosts.count > 0
 
                 onClicked: {
                     target.text = "";
                     errorMsg.text = "";
-                    manager.pingAll()
+
+                    manager.pingAll();
                 }
             }
 
             MenuItem {
+                id: clearHistory
                 text: qsTr("Clear history")
+                enabled: hosts.count > 0
 
                 onClicked: {
-                    manager.clearHistory()
+                    errorMsg.text = "";
+                    enabled = false;
+                    pingAll.enabled = false;
+
+                    manager.clearHistory();
                 }
             }
         }
@@ -142,6 +157,7 @@ Page {
             }
 
             Repeater {
+                id: hosts
                 model: recentHosts
                 delegate: HostDelegate {}
             }
@@ -155,6 +171,9 @@ Page {
         busy.visible = true;
         busy.running = true;
         button.enabled = false;
+        clearHistory.enabled = true;
+        pingAll.enabled = true;
+
         manager.ping(target.text, useIpv6.checked);
     }
 }

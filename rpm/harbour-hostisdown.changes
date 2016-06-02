@@ -1,3 +1,8 @@
+* Thu Jun 02 2016 Andrea Scarpino <me@andreascarpino.it> 0.6-1
+- Implemented a poller to ping all hosts from history
+- Add Sweding and Italian translations
+- Minor fixes
+
 * Fri Jul 03 2015 Andrea Scarpino <me@andreascarpino.it> 0.5.1-1
 - Landscape support
 
