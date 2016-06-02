@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="it" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="it">
 <context>
     <name>CoverPage</name>
     <message>
@@ -68,37 +70,37 @@
         <translation>La macchina è SPENTA!</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="72"/>
+        <location filename="../qml/pages/MainPage.qml" line="66"/>
         <source>Ping all</source>
         <translation>Manda ping a tutti</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="81"/>
+        <location filename="../qml/pages/MainPage.qml" line="76"/>
         <source>Clear history</source>
         <translation>Cancella cronologia</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="95"/>
+        <location filename="../qml/pages/MainPage.qml" line="89"/>
         <source>Ping any host!</source>
         <translation>Manda un ping!</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="103"/>
+        <location filename="../qml/pages/MainPage.qml" line="97"/>
         <source>An IP address or hostname</source>
         <translation>Un indirizzo IP o hostname</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="120"/>
-        <source>IPv6</source>
-        <translation>IPv6</translation>
+        <location filename="../qml/pages/MainPage.qml" line="117"/>
+        <source>Use IPv6</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="136"/>
+        <location filename="../qml/pages/MainPage.qml" line="133"/>
         <source>Ping it</source>
         <translation>Manda un ping</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="147"/>
+        <location filename="../qml/pages/MainPage.qml" line="141"/>
         <source>History</source>
         <translation>Cronologia</translation>
     </message>

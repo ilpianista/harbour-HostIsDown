@@ -57,12 +57,6 @@ Page {
         }
     }
 
-    function defaults() {
-        target.text = "";
-        useIpv6.checked = false;
-        errorMsg.text = "";
-    }
-
     SilicaFlickable {
         anchors.fill: parent
         contentHeight: column.height
@@ -72,7 +66,8 @@ Page {
                 text: qsTr("Ping all")
 
                 onClicked: {
-                    defaults();
+                    target.text = "";
+                    errorMsg.text = "";
                     manager.pingAll()
                 }
             }
@@ -81,7 +76,6 @@ Page {
                 text: qsTr("Clear history")
 
                 onClicked: {
-                    defaults();
                     manager.clearHistory()
                 }
             }
@@ -103,9 +97,12 @@ Page {
                 placeholderText: qsTr("An IP address or hostname")
 
                 onTextChanged: {
-                    if (target.text.match('([a-zA-Z1-9]{1,4}:){5}[a-zA-Z1-9]{1,4}')) {
+                    button.enabled = text.length > 0;
+                    errorMsg.text = "";
+
+                    if (text.match('([a-zA-Z1-9]{1,4}:){5}[a-zA-Z1-9]{1,4}')) {
                         useIpv6.checked = true;
-                    } else if (target.text.match('([1-9]{1,3}.){3}[1-9]{1,3}')) {
+                    } else if (text.match('([1-9]{1,3}.){3}[1-9]{1,3}')) {
                         useIpv6.checked = false;
                     }
                 }
@@ -117,7 +114,7 @@ Page {
 
             TextSwitch {
                 id: useIpv6
-                text: qsTr("IPv6")
+                text: qsTr("Use IPv6")
             }
 
             Label {
@@ -135,12 +132,9 @@ Page {
                 id: button
                 text: qsTr("Ping it")
                 anchors.horizontalCenter: parent.horizontalCenter
+                enabled: false
 
-                onClicked: {
-                    if (target.text.length !== 0) {
-                        pingHost();
-                    }
-                }
+                onClicked: pingHost();
             }
 
             SectionHeader {

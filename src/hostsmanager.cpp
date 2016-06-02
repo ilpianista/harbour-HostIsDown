@@ -24,7 +24,6 @@
 
 #include "hostsmanager.h"
 
-#include <QDebug>
 #include <QEventLoop>
 #include <QSqlRecord>
 
@@ -63,7 +62,6 @@ void HostsManager::pingAll()
     }
 
     Q_FOREACH (const QString host, pairs.keys()) {
-        qDebug() << host << pairs.value(host).toBool();
         ping(host, pairs.value(host).toBool());
     }
 }
