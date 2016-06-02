@@ -33,6 +33,8 @@ int main(int argc, char *argv[])
     QScopedPointer<QGuiApplication> app(SailfishApp::application(argc, argv));
     QScopedPointer<QQuickView> view(SailfishApp::createView());
 
+    QCoreApplication::setApplicationName(QStringLiteral("HostIsDown"));
+
     HostsManager manager;
     view->rootContext()->setContextProperty("manager", &manager);
     HostsSqlModel* recentHosts = manager.recentHosts();
