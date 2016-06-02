@@ -1,7 +1,7 @@
 /*
   The MIT License (MIT)
 
-  Copyright (c) 2014-2015 Andrea Scarpino <me@andreascarpino.it>
+  Copyright (c) 2014-2016 Andrea Scarpino <me@andreascarpino.it>
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
@@ -34,6 +34,7 @@ int main(int argc, char *argv[])
     QScopedPointer<QQuickView> view(SailfishApp::createView());
 
     QCoreApplication::setApplicationName(QStringLiteral("HostIsDown"));
+    QCoreApplication::setOrganizationDomain(QStringLiteral("it.andreascarpino"));
 
     HostsManager manager;
     view->rootContext()->setContextProperty("manager", &manager);
