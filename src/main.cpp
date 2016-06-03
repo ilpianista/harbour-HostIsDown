@@ -33,8 +33,8 @@ int main(int argc, char *argv[])
     QScopedPointer<QGuiApplication> app(SailfishApp::application(argc, argv));
     QScopedPointer<QQuickView> view(SailfishApp::createView());
 
-    QCoreApplication::setApplicationName(QStringLiteral("HostIsDown"));
-    QCoreApplication::setOrganizationDomain(QStringLiteral("it.andreascarpino"));
+    QCoreApplication::setApplicationName(QStringLiteral("harbour-hostisdown"));
+    QCoreApplication::setOrganizationDomain(QStringLiteral("andreascarpino.it"));
 
     HostsManager manager;
     view->rootContext()->setContextProperty("manager", &manager);

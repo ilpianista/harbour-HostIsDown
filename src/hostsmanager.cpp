@@ -39,7 +39,7 @@ HostsManager::HostsManager(QObject *parent) :
   , m_model(new HostsSqlModel(this))
   , m_timer(0)
 {
-    m_settings = new QSettings(QCoreApplication::organizationDomain(), QCoreApplication::applicationName(), this);
+    m_settings = new QSettings(QCoreApplication::applicationName(), QCoreApplication::applicationName(), this);
     setPoller(m_settings->value("Poller", 0).toUInt());
 
     if (m_timer) {

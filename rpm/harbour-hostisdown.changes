@@ -1,3 +1,6 @@
+* Fri Jun 03 2016 Andrea Scarpino <me@andreascarpino.it> 0.6.1-1
+- Fix app name following Harbour policies
+
 * Thu Jun 02 2016 Andrea Scarpino <me@andreascarpino.it> 0.6-1
 - Implemented a poller to ping all hosts from history
 - Add Sweding and Italian translations
