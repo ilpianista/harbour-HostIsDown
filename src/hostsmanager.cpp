@@ -31,6 +31,7 @@
 #include <QSqlRecord>
 #include <QTimer>
 
+#include "dbmanager.h"
 #include "pingaction.h"
 
 HostsManager::HostsManager(QObject *parent) :
@@ -128,8 +129,6 @@ quint16 HostsManager::getPoller() const
 
 HostsSqlModel *HostsManager::recentHosts()
 {
-    m_model = new HostsSqlModel(this);
-
     return m_model;
 }
 

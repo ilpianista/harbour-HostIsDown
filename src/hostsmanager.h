@@ -27,8 +27,9 @@
 
 #include <QObject>
 
-#include "dbmanager.h"
+#include "hostssqlmodel.h"
 
+class DBManager;
 class QSettings;
 class QTimer;
 
