@@ -32,4 +32,5 @@ OTHER_FILES += \
 CONFIG += sailfishapp_i18n
 
 TRANSLATIONS += translations/harbour-hostisdown-it.ts \
+    translations/harbour-hostisdown-sr.ts \
     translations/harbour-hostisdown-sv.ts
