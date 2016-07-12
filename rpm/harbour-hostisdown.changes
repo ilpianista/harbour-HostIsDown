@@ -1,3 +1,7 @@
+* Wed Jul 13 2016 Andrea Scarpino <me@andreascarpino.it> 0.6.2-1
+- Add Serbian translation
+- Fix memory leak
+
 * Fri Jun 03 2016 Andrea Scarpino <me@andreascarpino.it> 0.6.1-1
 - Fix app name following Harbour policies
 
