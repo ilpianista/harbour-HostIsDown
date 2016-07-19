@@ -76,6 +76,11 @@ ListItem {
             text: qsTr("Forget")
             onClicked: forget(host)
         }
+
+        MenuItem {
+            text: qsTr("Open SSH")
+            onClicked: manager.openSSH(host)
+        }
     }
 
     onClicked: {

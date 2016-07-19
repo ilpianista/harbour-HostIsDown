@@ -27,6 +27,7 @@
 #include <QCoreApplication>
 #include <QDebug>
 #include <QEventLoop>
+#include <QProcess>
 #include <QSettings>
 #include <QSqlRecord>
 #include <QTimer>
@@ -54,6 +55,11 @@ HostsManager::~HostsManager()
     delete m_db;
     delete m_settings;
     delete m_timer;
+
+    Q_FOREACH (QProcess *p, m_sshProcesses) {
+        p->kill();
+        delete p;
+    }
 }
 
 void HostsManager::clearHistory()
@@ -66,6 +72,17 @@ void HostsManager::forget(const QString &host)
 {
     m_db->deleteHost(host);
     m_model->refresh();
+}
+
+void HostsManager::openSSH(const QString &host)
+{
+    const QProcessEnvironment env;
+    const QString terminal = env.value(QLatin1Literal("TERMINAL"), QLatin1Literal("fingerterm"));
+
+    QProcess *ssh = new QProcess();
+    ssh->start(QStringLiteral("%1 -e \"ssh %2\"").arg(terminal).arg(host));
+
+    m_sshProcesses.append(ssh);
 }
 
 void HostsManager::pingAll()

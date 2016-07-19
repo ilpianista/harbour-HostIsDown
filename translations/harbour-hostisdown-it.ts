@@ -47,7 +47,12 @@
         <translation>Dimentica</translation>
     </message>
     <message>
-        <location filename="../qml/pages/HostDelegate.qml" line="87"/>
+        <location filename="../qml/pages/HostDelegate.qml" line="81"/>
+        <source>Open SSH</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/HostDelegate.qml" line="92"/>
         <source>Deleting</source>
         <translation>Sto cancellando...</translation>
     </message>
@@ -95,17 +100,17 @@
         <translation>Un indirizzo IP o hostname</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="132"/>
+        <location filename="../qml/pages/MainPage.qml" line="133"/>
         <source>Use IPv6</source>
         <translation>Usa IPv6</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="148"/>
+        <location filename="../qml/pages/MainPage.qml" line="149"/>
         <source>Ping it</source>
         <translation>Manda un ping</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="156"/>
+        <location filename="../qml/pages/MainPage.qml" line="157"/>
         <source>History</source>
         <translation>Cronologia</translation>
     </message>
@@ -125,7 +130,7 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="43"/>
         <source>Pings every N minutes all hosts in the history</source>
-        <translation>Effettua un ping ogni N minuti su ogni host nella cronologia</translation>
+        <translation>Manda un ping ogni N minuti agli host in cronologia</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="51"/>

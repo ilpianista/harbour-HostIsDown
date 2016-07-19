@@ -30,6 +30,7 @@
 #include "hostssqlmodel.h"
 
 class DBManager;
+class QProcess;
 class QSettings;
 class QTimer;
 
@@ -42,11 +43,13 @@ public:
 
     Q_INVOKABLE void clearHistory();
     Q_INVOKABLE void forget(const QString &host);
+    Q_INVOKABLE void openSSH(const QString &host);
     Q_INVOKABLE void ping(const QString &host, const bool ipv6);
     Q_INVOKABLE void pingAll();
     Q_INVOKABLE void pingLast();
     Q_INVOKABLE quint16 getPoller() const;
     Q_INVOKABLE void setPoller(const quint16 minutes);
+
     HostsSqlModel* recentHosts();
 
 Q_SIGNALS:
@@ -60,6 +63,7 @@ private:
     QSettings* m_settings;
     QTimer* m_timer;
     quint16 m_poller;
+    QList<QProcess *> m_sshProcesses;
 
 };
 

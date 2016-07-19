@@ -47,7 +47,12 @@
         <translation>Glöm</translation>
     </message>
     <message>
-        <location filename="../qml/pages/HostDelegate.qml" line="87"/>
+        <location filename="../qml/pages/HostDelegate.qml" line="81"/>
+        <source>Open SSH</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/HostDelegate.qml" line="92"/>
         <source>Deleting</source>
         <translation>Tar bort</translation>
     </message>
@@ -72,7 +77,7 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="66"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Inställningar</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="73"/>
@@ -95,17 +100,17 @@
         <translation>En IP-adress eller ett värdnamn</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="132"/>
+        <location filename="../qml/pages/MainPage.qml" line="133"/>
         <source>Use IPv6</source>
-        <translation type="unfinished"></translation>
+        <translation>Använd IPv6</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="148"/>
+        <location filename="../qml/pages/MainPage.qml" line="149"/>
         <source>Ping it</source>
         <translation>Pinga den</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="156"/>
+        <location filename="../qml/pages/MainPage.qml" line="157"/>
         <source>History</source>
         <translation>Historik</translation>
     </message>
@@ -115,22 +120,22 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="36"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Inställningar</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="42"/>
         <source>Enable poller</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktivera efterfrågningsmodul</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="43"/>
         <source>Pings every N minutes all hosts in the history</source>
-        <translation type="unfinished"></translation>
+        <translation>Pingar varje värd i historiken med x minuters mellanrum</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="51"/>
         <source>Poller interval in minutes</source>
-        <translation type="unfinished"></translation>
+        <translation>Efterfågningsintervall i minuter</translation>
     </message>
 </context>
 </TS>

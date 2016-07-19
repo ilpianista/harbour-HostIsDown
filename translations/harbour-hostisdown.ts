@@ -47,7 +47,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/HostDelegate.qml" line="87"/>
+        <location filename="../qml/pages/HostDelegate.qml" line="81"/>
+        <source>Open SSH</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/HostDelegate.qml" line="92"/>
         <source>Deleting</source>
         <translation type="unfinished"></translation>
     </message>
@@ -95,17 +100,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="132"/>
+        <location filename="../qml/pages/MainPage.qml" line="133"/>
         <source>Use IPv6</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="148"/>
+        <location filename="../qml/pages/MainPage.qml" line="149"/>
         <source>Ping it</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="156"/>
+        <location filename="../qml/pages/MainPage.qml" line="157"/>
         <source>History</source>
         <translation type="unfinished"></translation>
     </message>
