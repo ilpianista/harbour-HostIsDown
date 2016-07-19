@@ -110,6 +110,7 @@ Page {
                 focus: true
                 inputMethodHints: Qt.ImhNoAutoUppercase | Qt.ImhUrlCharactersOnly
                 placeholderText: qsTr("An IP address or hostname")
+                validator: RegExpValidator { regExp: /^[\w\.-]*$/ }
 
                 onTextChanged: {
                     button.enabled = text.length > 0;
