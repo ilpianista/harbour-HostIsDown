@@ -59,7 +59,7 @@ CoverBackground {
             id: hostLabel
             width: parent.width
             wrapMode: Text.Wrap
-            font.pixelSize: 24
+            font.pixelSize: Theme.fontSizeSmall
             horizontalAlignment: Text.AlignHCenter
         }
 
