@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="sv">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="sv" version="2.1">
 <context>
     <name>CoverPage</name>
     <message>
@@ -49,7 +47,7 @@
     <message>
         <location filename="../qml/pages/HostDelegate.qml" line="81"/>
         <source>Open SSH</source>
-        <translation type="unfinished"></translation>
+        <translation>Öppna SSH</translation>
     </message>
     <message>
         <location filename="../qml/pages/HostDelegate.qml" line="92"/>

@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="it">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="it" version="2.1">
 <context>
     <name>CoverPage</name>
     <message>
@@ -49,7 +47,7 @@
     <message>
         <location filename="../qml/pages/HostDelegate.qml" line="81"/>
         <source>Open SSH</source>
-        <translation type="unfinished"></translation>
+        <translation>Apri SSH</translation>
     </message>
     <message>
         <location filename="../qml/pages/HostDelegate.qml" line="92"/>
@@ -82,7 +80,7 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="73"/>
         <source>Ping all</source>
-        <translation>Manda ping a tutti</translation>
+        <translation>Manda un ping a tutti</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="86"/>
