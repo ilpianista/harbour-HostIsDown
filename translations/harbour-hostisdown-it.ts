@@ -52,7 +52,7 @@
     <message>
         <location filename="../qml/pages/HostDelegate.qml" line="92"/>
         <source>Deleting</source>
-        <translation>Sto cancellando...</translation>
+        <translation>Sto cancellando</translation>
     </message>
 </context>
 <context>
