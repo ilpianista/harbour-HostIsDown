@@ -11,12 +11,12 @@
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="43"/>
         <source>is UNKNOWN!</source>
-        <translation></translation>
+        <translation>er UKJENT!</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="48"/>
         <source>is DOWN!</source>
-        <translation></translation>
+        <translation>er NEDE!</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="69"/>
@@ -29,32 +29,32 @@
     <message>
         <location filename="../qml/pages/HostDelegate.qml" line="67"/>
         <source>It was UP</source>
-        <translation></translation>
+        <translation>Den var OPPE</translation>
     </message>
     <message>
         <location filename="../qml/pages/HostDelegate.qml" line="68"/>
         <source>It was DOWN</source>
-        <translation></translation>
+        <translation>Den var NEDE</translation>
     </message>
     <message>
         <location filename="../qml/pages/HostDelegate.qml" line="70"/>
         <source>It was UNKNOWN</source>
-        <translation></translation>
+        <translation>Den var UKJENT</translation>
     </message>
     <message>
         <location filename="../qml/pages/HostDelegate.qml" line="76"/>
         <source>Forget</source>
-        <translation></translation>
+        <translation>Glem</translation>
     </message>
     <message>
         <location filename="../qml/pages/HostDelegate.qml" line="81"/>
         <source>Open SSH</source>
-        <translation></translation>
+        <translation>Åpne SSH</translation>
     </message>
     <message>
         <location filename="../qml/pages/HostDelegate.qml" line="92"/>
         <source>Deleting</source>
-        <translation></translation>
+        <translation>Sletter</translation>
     </message>
 </context>
 <context>
@@ -62,37 +62,37 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="46"/>
         <source>The host is UP!</source>
-        <translation></translation>
+        <translation>Verten er OPPE!</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="50"/>
         <source>The host is UNKNOWN!</source>
-        <translation></translation>
+        <translation>Verten er UKJENT!</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="55"/>
         <source>The host is DOWN!</source>
-        <translation></translation>
+        <translation>Verten er NEDE!</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="66"/>
         <source>Settings</source>
-        <translation></translation>
+        <translation>Innstillinger</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="73"/>
         <source>Ping all</source>
-        <translation></translation>
+        <translation>Send tilbakemeldingskall til alle</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="86"/>
         <source>Clear history</source>
-        <translation></translation>
+        <translation>Tøm historikk</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="104"/>
         <source>Ping any host!</source>
-        <translation></translation>
+        <translation>Send tilbakemeldingskall til valgfri vert!</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="112"/>
@@ -102,7 +102,7 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="133"/>
         <source>Use IPv6</source>
-        <translation></translation>
+        <translation>Bruk IPv6</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="149"/>
@@ -112,7 +112,7 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="157"/>
         <source>History</source>
-        <translation></translation>
+        <translation>Historikk</translation>
     </message>
 </context>
 <context>
@@ -120,22 +120,22 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="36"/>
         <source>Settings</source>
-        <translation></translation>
+        <translation>Innstillinger</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="42"/>
         <source>Enable poller</source>
-        <translation></translation>
+        <translation>Skru på spørrer</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="43"/>
         <source>Pings every N minutes all hosts in the history</source>
-        <translation></translation>
+        <translation>Sender tilbakemeldingskall hvert N minutt til alle verter i historikken</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="51"/>
         <source>Poller interval in minutes</source>
-        <translation></translation>
+        <translation>Spørringsintervall i minutter</translation>
     </message>
 </context>
 </TS>
