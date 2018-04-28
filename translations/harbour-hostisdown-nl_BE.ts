@@ -11,7 +11,7 @@
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="43"/>
         <source>is UNKNOWN!</source>
-        <translation></translation>
+        <translation>is ONBEKEND!</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="48"/>
@@ -21,7 +21,7 @@
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="69"/>
         <source>Ping It!</source>
-        <translation></translation>
+        <translation>Ping ze!</translation>
     </message>
 </context>
 <context>
@@ -29,32 +29,32 @@
     <message>
         <location filename="../qml/pages/HostDelegate.qml" line="67"/>
         <source>It was UP</source>
-        <translation></translation>
+        <translation>Hij was UP</translation>
     </message>
     <message>
         <location filename="../qml/pages/HostDelegate.qml" line="68"/>
         <source>It was DOWN</source>
-        <translation></translation>
+        <translation>Hij was DOWN</translation>
     </message>
     <message>
         <location filename="../qml/pages/HostDelegate.qml" line="70"/>
         <source>It was UNKNOWN</source>
-        <translation></translation>
+        <translation>Hij was ONBEKEND</translation>
     </message>
     <message>
         <location filename="../qml/pages/HostDelegate.qml" line="76"/>
         <source>Forget</source>
-        <translation></translation>
+        <translation>Vergeten</translation>
     </message>
     <message>
         <location filename="../qml/pages/HostDelegate.qml" line="81"/>
         <source>Open SSH</source>
-        <translation></translation>
+        <translation>SSH openen</translation>
     </message>
     <message>
         <location filename="../qml/pages/HostDelegate.qml" line="92"/>
         <source>Deleting</source>
-        <translation></translation>
+        <translation>Verwijderen</translation>
     </message>
 </context>
 <context>
@@ -62,57 +62,57 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="46"/>
         <source>The host is UP!</source>
-        <translation></translation>
+        <translation>Den host is UP!</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="50"/>
         <source>The host is UNKNOWN!</source>
-        <translation></translation>
+        <translation>Den host is ONBEKEND!</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="55"/>
         <source>The host is DOWN!</source>
-        <translation></translation>
+        <translation>Den host is DOWN!</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="66"/>
         <source>Settings</source>
-        <translation></translation>
+        <translation>Instellingen</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="73"/>
         <source>Ping all</source>
-        <translation></translation>
+        <translation>Pingd alles</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="86"/>
         <source>Clear history</source>
-        <translation></translation>
+        <translation>Geschiedenis wissen</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="104"/>
         <source>Ping any host!</source>
-        <translation></translation>
+        <translation>Pingd eender welken host!</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="112"/>
         <source>An IP address or hostname</source>
-        <translation></translation>
+        <translation>Een IP-adres of hostnaam</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="133"/>
         <source>Use IPv6</source>
-        <translation></translation>
+        <translation>Gebruikt IPv6</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="149"/>
         <source>Ping it</source>
-        <translation></translation>
+        <translation>Pingd ze</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="157"/>
         <source>History</source>
-        <translation></translation>
+        <translation>Geschiedenis</translation>
     </message>
 </context>
 <context>
@@ -120,22 +120,22 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="36"/>
         <source>Settings</source>
-        <translation></translation>
+        <translation>Instellingen</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="42"/>
         <source>Enable poller</source>
-        <translation></translation>
+        <translation>Poller inschakelen</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="43"/>
         <source>Pings every N minutes all hosts in the history</source>
-        <translation></translation>
+        <translation>Pingd alle hosts in de geschiedenis elke N minuten</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="51"/>
         <source>Poller interval in minutes</source>
-        <translation></translation>
+        <translation>Pollerinterval in minuten</translation>
     </message>
 </context>
 </TS>
