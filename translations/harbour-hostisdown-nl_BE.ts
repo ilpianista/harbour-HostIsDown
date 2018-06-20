@@ -21,7 +21,7 @@
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="69"/>
         <source>Ping It!</source>
-        <translation>Ping ze!</translation>
+        <translation>Pingt hem!</translation>
     </message>
 </context>
 <context>
@@ -82,7 +82,7 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="73"/>
         <source>Ping all</source>
-        <translation>Pingd alles</translation>
+        <translation>Alles pingen</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="86"/>
@@ -92,7 +92,7 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="104"/>
         <source>Ping any host!</source>
-        <translation>Pingd eender welken host!</translation>
+        <translation>Pingt eender welken host!</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="112"/>
@@ -102,12 +102,12 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="133"/>
         <source>Use IPv6</source>
-        <translation>Gebruikt IPv6</translation>
+        <translation>IPv6 gebruiken</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="149"/>
         <source>Ping it</source>
-        <translation>Pingd ze</translation>
+        <translation>Pingt hem</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="157"/>
@@ -130,7 +130,7 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="43"/>
         <source>Pings every N minutes all hosts in the history</source>
-        <translation>Pingd alle hosts in de geschiedenis elke N minuten</translation>
+        <translation>Pingt alle hosts in de geschiedenis elke N minuten</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="51"/>
