@@ -77,7 +77,7 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="66"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Paramètres</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="73"/>
@@ -87,7 +87,7 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="86"/>
         <source>Clear history</source>
-        <translation type="unfinished"></translation>
+        <translation>Effacer l’historique</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="104"/>
@@ -112,7 +112,7 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="157"/>
         <source>History</source>
-        <translation type="unfinished"></translation>
+        <translation>Historique</translation>
     </message>
 </context>
 <context>
@@ -120,7 +120,7 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="36"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Paramètres</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="42"/>
