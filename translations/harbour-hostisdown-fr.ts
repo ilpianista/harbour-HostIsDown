@@ -44,7 +44,7 @@
     <message>
         <location filename="../qml/pages/HostDelegate.qml" line="76"/>
         <source>Forget</source>
-        <translation type="unfinished"></translation>
+        <translation>Oublier</translation>
     </message>
     <message>
         <location filename="../qml/pages/HostDelegate.qml" line="81"/>
@@ -54,7 +54,7 @@
     <message>
         <location filename="../qml/pages/HostDelegate.qml" line="92"/>
         <source>Deleting</source>
-        <translation type="unfinished"></translation>
+        <translation>Suppression</translation>
     </message>
 </context>
 <context>
@@ -97,12 +97,12 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="112"/>
         <source>An IP address or hostname</source>
-        <translation type="unfinished"></translation>
+        <translation>Une adresse IP ou un nom d’hôte</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="133"/>
         <source>Use IPv6</source>
-        <translation type="unfinished"></translation>
+        <translation>Utiliser IPv6</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="149"/>
