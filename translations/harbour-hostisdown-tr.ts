@@ -6,22 +6,22 @@
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="39"/>
         <source>is UP!</source>
-        <translation type="unfinished"></translation>
+        <translation>ÇALIŞIYOR!</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="43"/>
         <source>is UNKNOWN!</source>
-        <translation type="unfinished"></translation>
+        <translation>BİLİNMİYOR!</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="48"/>
         <source>is DOWN!</source>
-        <translation type="unfinished"></translation>
+        <translation>ÇALIŞMIYOR!</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="69"/>
         <source>Ping It!</source>
-        <translation type="unfinished"></translation>
+        <translation>Ping Gönder!</translation>
     </message>
 </context>
 <context>
@@ -29,32 +29,32 @@
     <message>
         <location filename="../qml/pages/HostDelegate.qml" line="67"/>
         <source>It was UP</source>
-        <translation type="unfinished"></translation>
+        <translation>ÇALIŞIYORDU</translation>
     </message>
     <message>
         <location filename="../qml/pages/HostDelegate.qml" line="68"/>
         <source>It was DOWN</source>
-        <translation type="unfinished"></translation>
+        <translation>ÇALIŞMIYORDU</translation>
     </message>
     <message>
         <location filename="../qml/pages/HostDelegate.qml" line="70"/>
         <source>It was UNKNOWN</source>
-        <translation type="unfinished"></translation>
+        <translation>BİLİNMİYORDU</translation>
     </message>
     <message>
         <location filename="../qml/pages/HostDelegate.qml" line="76"/>
         <source>Forget</source>
-        <translation type="unfinished"></translation>
+        <translation>Unut</translation>
     </message>
     <message>
         <location filename="../qml/pages/HostDelegate.qml" line="81"/>
         <source>Open SSH</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH&apos;i aç</translation>
     </message>
     <message>
         <location filename="../qml/pages/HostDelegate.qml" line="92"/>
         <source>Deleting</source>
-        <translation type="unfinished"></translation>
+        <translation>Siliniyor</translation>
     </message>
 </context>
 <context>
@@ -62,57 +62,57 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="46"/>
         <source>The host is UP!</source>
-        <translation type="unfinished"></translation>
+        <translation>Ana makine ÇALIŞIYOR!</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="50"/>
         <source>The host is UNKNOWN!</source>
-        <translation type="unfinished"></translation>
+        <translation>Ana makinenin durumu BİLİNMİYOR!</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="55"/>
         <source>The host is DOWN!</source>
-        <translation type="unfinished"></translation>
+        <translation>Ana makine ÇALIŞMIYOR!</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="66"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Ayarlar</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="73"/>
         <source>Ping all</source>
-        <translation type="unfinished"></translation>
+        <translation>Tümüne ping gönder</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="86"/>
         <source>Clear history</source>
-        <translation type="unfinished"></translation>
+        <translation>Geçmişi temizle</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="104"/>
         <source>Ping any host!</source>
-        <translation type="unfinished"></translation>
+        <translation>Herhangi bir ana makineye ping gönder!</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="112"/>
         <source>An IP address or hostname</source>
-        <translation type="unfinished"></translation>
+        <translation>Bir IP adresi veya ana makine adı</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="133"/>
         <source>Use IPv6</source>
-        <translation type="unfinished"></translation>
+        <translation>IPv6 kullan</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="149"/>
         <source>Ping it</source>
-        <translation type="unfinished"></translation>
+        <translation>Ping gönder</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="157"/>
         <source>History</source>
-        <translation type="unfinished"></translation>
+        <translation>Geçmiş</translation>
     </message>
 </context>
 <context>
@@ -120,22 +120,22 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="36"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Ayarlar</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="42"/>
         <source>Enable poller</source>
-        <translation type="unfinished"></translation>
+        <translation>Yoklayıcıyı etkinleştir</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="43"/>
         <source>Pings every N minutes all hosts in the history</source>
-        <translation type="unfinished"></translation>
+        <translation>Geçmişteki tüm ana makinelere her N dakikada bir ping gönderir</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="51"/>
         <source>Poller interval in minutes</source>
-        <translation type="unfinished"></translation>
+        <translation>Dakika cinsinden yoklama aralığı</translation>
     </message>
 </context>
 </TS>
