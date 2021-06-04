@@ -2,7 +2,7 @@
 
 An application for [Sailfish OS](https://sailfishos.org) to check whether the desired host is up or not.
 
-[Build status](https://build.merproject.org/package/live_build_log/home:ilpianista/harbour-hostisdown/sailfish_latest_armv7hl/armv8el)
+[![Build Status](https://git.sailfishos.org/ilpianista/harbour-HostIsDown/badges/master/pipeline.svg)](https://git.sailfishos.org/ilpianista/harbour-HostIsDown/pipelines)
 
 ## Translations
 
