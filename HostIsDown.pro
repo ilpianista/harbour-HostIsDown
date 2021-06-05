@@ -31,7 +31,17 @@ OTHER_FILES += \
 
 CONFIG += sailfishapp_i18n
 
-TRANSLATIONS += translations/harbour-hostisdown-it.ts \
+TRANSLATIONS += \
+    translations/harbour-hostisdown-et.ts \
+    translations/harbour-hostisdown-fi.ts \
+    translations/harbour-hostisdown-fr.ts \
+    translations/harbour-hostisdown-hr.ts \
+    translations/harbour-hostisdown-it.ts \
+    translations/harbour-hostisdown-nb_NO.ts \
+    translations/harbour-hostisdown-nl_BE.ts \
     translations/harbour-hostisdown-nl.ts \
     translations/harbour-hostisdown-sr.ts \
-    translations/harbour-hostisdown-sv.ts
+    translations/harbour-hostisdown-sv.ts \
+    translations/harbour-hostisdown-tr.ts \
+    translations/harbour-hostisdown.ts \
+    translations/harbour-hostisdown-zh_Hant.ts
