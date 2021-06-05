@@ -2,7 +2,7 @@
 
 An application for [Sailfish OS](https://sailfishos.org) to check whether the desired host is up or not.
 
-[![Build Status](https://git.sailfishos.org/ilpianista/harbour-HostIsDown/badges/master/pipeline.svg)](https://git.sailfishos.org/ilpianista/harbour-HostIsDown/pipelines)
+[![Build Status](https://gitlab.com/ilpianista/harbour-HostIsDown/badges/master/pipeline.svg)](https://gitlab.com/ilpianista/harbour-HostIsDown/pipelines)
 
 ## Translations
 
