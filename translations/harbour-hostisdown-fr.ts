@@ -6,22 +6,22 @@
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="39"/>
         <source>is UP!</source>
-        <translation type="unfinished"></translation>
+        <translation>est EN LIGNE&#xa0;!</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="43"/>
         <source>is UNKNOWN!</source>
-        <translation type="unfinished"></translation>
+        <translation>est INCONNU&#xa0;!</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="48"/>
         <source>is DOWN!</source>
-        <translation type="unfinished"></translation>
+        <translation>est HORS LIGNE&#xa0;!</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="69"/>
         <source>Ping It!</source>
-        <translation type="unfinished"></translation>
+        <translation>Envoyer un ping&#xa0;!</translation>
     </message>
 </context>
 <context>
@@ -29,17 +29,17 @@
     <message>
         <location filename="../qml/pages/HostDelegate.qml" line="67"/>
         <source>It was UP</source>
-        <translation type="unfinished"></translation>
+        <translation>Il était EN LIGNE</translation>
     </message>
     <message>
         <location filename="../qml/pages/HostDelegate.qml" line="68"/>
         <source>It was DOWN</source>
-        <translation type="unfinished"></translation>
+        <translation>Il était HORS LIGNE</translation>
     </message>
     <message>
         <location filename="../qml/pages/HostDelegate.qml" line="70"/>
         <source>It was UNKNOWN</source>
-        <translation type="unfinished"></translation>
+        <translation>Il était INCONNU</translation>
     </message>
     <message>
         <location filename="../qml/pages/HostDelegate.qml" line="76"/>
@@ -49,7 +49,7 @@
     <message>
         <location filename="../qml/pages/HostDelegate.qml" line="81"/>
         <source>Open SSH</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouvrir SSH</translation>
     </message>
     <message>
         <location filename="../qml/pages/HostDelegate.qml" line="92"/>
@@ -62,17 +62,17 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="46"/>
         <source>The host is UP!</source>
-        <translation type="unfinished"></translation>
+        <translation>L&apos;hôte est EN LIGNE&#xa0;!</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="50"/>
         <source>The host is UNKNOWN!</source>
-        <translation type="unfinished"></translation>
+        <translation>L&apos;hôte est INCONNU&#xa0;!</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="55"/>
         <source>The host is DOWN!</source>
-        <translation type="unfinished"></translation>
+        <translation>L&apos;hôte est HORS LIGNE&#xa0;!</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="66"/>
@@ -82,7 +82,7 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="73"/>
         <source>Ping all</source>
-        <translation type="unfinished"></translation>
+        <translation>Envoyer ping à tous</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="86"/>
@@ -92,7 +92,7 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="104"/>
         <source>Ping any host!</source>
-        <translation type="unfinished"></translation>
+        <translation>Envoyer un ping à n&apos;importe quel hôte&#xa0;!</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="112"/>
@@ -107,7 +107,7 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="149"/>
         <source>Ping it</source>
-        <translation type="unfinished"></translation>
+        <translation>Envoyer un ping</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="157"/>
@@ -125,17 +125,17 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="42"/>
         <source>Enable poller</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Activer poller</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="43"/>
         <source>Pings every N minutes all hosts in the history</source>
-        <translation type="unfinished"></translation>
+        <translation>Envoyer un ping toutes les N minutes à tous les hôtes de l&apos;historique</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="51"/>
         <source>Poller interval in minutes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">L’intervalle du poller en minutes</translation>
     </message>
 </context>
 </TS>
