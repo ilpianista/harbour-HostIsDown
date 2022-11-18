@@ -6,3 +6,8 @@ Icon=harbour-hostisdown
 Exec=harbour-hostisdown
 Name=HostIsDown
 Comment=Check if the desired host is up or not
+
+[X-Sailjail]
+Permissions=Internet
+OrganizationName=it.andreascarpino
+ApplicationName=harbour-hostisdown
