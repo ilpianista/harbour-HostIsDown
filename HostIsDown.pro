@@ -39,6 +39,7 @@ TRANSLATIONS += \
     translations/harbour-hostisdown-fr.ts \
     translations/harbour-hostisdown-hr.ts \
     translations/harbour-hostisdown-it.ts \
+    translations/harbour-hostisdown-lt.ts \
     translations/harbour-hostisdown-nb_NO.ts \
     translations/harbour-hostisdown-nl_BE.ts \
     translations/harbour-hostisdown-nl.ts \
