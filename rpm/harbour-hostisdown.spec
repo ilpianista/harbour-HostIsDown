@@ -40,15 +40,15 @@ Categories:
  - Utility
 Custom:
   Repo: https://github.com/ilpianista/harbour-HostIsDown
-Icon: https://github.com/ilpianista/harbour-HostIsDown/-/raw/master/icons/harbour-base64.svg
+Icon: https://raw.githubusercontent.com/ilpianista/harbour-HostIsDown/master/icons/harbour-base64.svg
 Screenshots:
- - https://github.com/ilpianista/harbour-HostIsDown/-/raw/master/screenshots/screenshot_1.png
- - https://github.com/ilpianista/harbour-HostIsDown/-/raw/master/screenshots/screenshot_2.png
- - https://github.com/ilpianista/harbour-HostIsDown/-/raw/master/screenshots/screenshot_3.png
+ - https://raw.githubusercontent.com/ilpianista/harbour-HostIsDown/master/screenshots/screenshot_1.png
+ - https://raw.githubusercontent.com/ilpianista/harbour-HostIsDown/master/screenshots/screenshot_2.png
+ - https://raw.githubusercontent.com/ilpianista/harbour-HostIsDown/master/screenshots/screenshot_3.png
 Url:
   Homepage: https://github.com/ilpianista/harbour-HostIsDown
   Bugtracker: https://github.com/ilpianista/harbour-HostIsDown/-/issues
-  Donation: https://paypal.me/andreascarpino
+  Donation: https://liberapay.com/ilpianista
 %endif
 
 
