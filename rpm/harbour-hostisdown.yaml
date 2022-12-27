@@ -30,7 +30,7 @@ Description: |
    - https://raw.githubusercontent.com/ilpianista/harbour-HostIsDown/master/screenshots/screenshot_3.png
   Url:
     Homepage: https://github.com/ilpianista/harbour-HostIsDown
-    Bugtracker: https://github.com/ilpianista/harbour-HostIsDown/-/issues
+    Bugtracker: https://github.com/ilpianista/harbour-HostIsDown/issues
     Donation: https://liberapay.com/ilpianista
   %endif
 Configure: none
@@ -57,7 +57,7 @@ Requires:
 
 # All installed files
 Files:
-  - '%{_bindir}/%{name}'
+  - '%attr(4755,root,root) %{_bindir}/%{name}'
   - '%{_datadir}/%{name}'
   - '%{_datadir}/applications/%{name}.desktop'
   - '%{_datadir}/icons/hicolor/*/apps/%{name}.png'
