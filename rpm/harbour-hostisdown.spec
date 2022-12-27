@@ -40,14 +40,14 @@ Categories:
  - Utility
 Custom:
   Repo: https://github.com/ilpianista/harbour-HostIsDown
-Icon: https://raw.githubusercontent.com/ilpianista/harbour-HostIsDown/master/icons/harbour-base64.svg
+Icon: https://raw.githubusercontent.com/ilpianista/harbour-HostIsDown/master/icons/harbour-hostisdown.svg
 Screenshots:
  - https://raw.githubusercontent.com/ilpianista/harbour-HostIsDown/master/screenshots/screenshot_1.png
  - https://raw.githubusercontent.com/ilpianista/harbour-HostIsDown/master/screenshots/screenshot_2.png
  - https://raw.githubusercontent.com/ilpianista/harbour-HostIsDown/master/screenshots/screenshot_3.png
 Url:
   Homepage: https://github.com/ilpianista/harbour-HostIsDown
-  Bugtracker: https://github.com/ilpianista/harbour-HostIsDown/-/issues
+  Bugtracker: https://github.com/ilpianista/harbour-HostIsDown/issues
   Donation: https://liberapay.com/ilpianista
 %endif
 
@@ -84,7 +84,7 @@ desktop-file-install --delete-original       \
 
 %files
 %defattr(-,root,root,-)
-%attr(4755,root,root) %{_bindir}/%{name}
+%caps(cap_net_admin=ep cap_net_raw=ep) %{_bindir}/%{name}
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*/apps/%{name}.png

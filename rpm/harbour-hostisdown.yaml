@@ -57,7 +57,7 @@ Requires:
 
 # All installed files
 Files:
-  - '%attr(4755,root,root) %{_bindir}/%{name}'
+  - '%caps(cap_net_admin=ep cap_net_raw=ep) %{_bindir}/%{name}'
   - '%{_datadir}/%{name}'
   - '%{_datadir}/applications/%{name}.desktop'
   - '%{_datadir}/icons/hicolor/*/apps/%{name}.png'
