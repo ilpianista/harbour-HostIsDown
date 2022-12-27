@@ -6,22 +6,22 @@
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="39"/>
         <source>is UP!</source>
-        <translation>est EN LIGNE&#xa0;!</translation>
+        <translation>est EN LIGNE!</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="43"/>
         <source>is UNKNOWN!</source>
-        <translation>est INCONNU&#xa0;!</translation>
+        <translation>est INCONNU!</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="48"/>
         <source>is DOWN!</source>
-        <translation>est HORS LIGNE&#xa0;!</translation>
+        <translation>est HORS LIGNE!</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="69"/>
         <source>Ping It!</source>
-        <translation>Envoyer un ping&#xa0;!</translation>
+        <translation>Envoyer un ping!</translation>
     </message>
 </context>
 <context>
@@ -62,17 +62,17 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="46"/>
         <source>The host is UP!</source>
-        <translation>L&apos;hôte est EN LIGNE&#xa0;!</translation>
+        <translation>L&apos;hôte est EN LIGNE!</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="50"/>
         <source>The host is UNKNOWN!</source>
-        <translation>L&apos;hôte est INCONNU&#xa0;!</translation>
+        <translation>L&apos;hôte est INCONNU!</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="55"/>
         <source>The host is DOWN!</source>
-        <translation>L&apos;hôte est HORS LIGNE&#xa0;!</translation>
+        <translation>L&apos;hôte est HORS LIGNE!</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="66"/>
@@ -92,7 +92,7 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="104"/>
         <source>Ping any host!</source>
-        <translation>Envoyer un ping à n&apos;importe quel hôte&#xa0;!</translation>
+        <translation>Envoyer un ping à n&apos;importe quel hôte !</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="112"/>
