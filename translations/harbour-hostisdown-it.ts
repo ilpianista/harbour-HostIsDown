@@ -92,7 +92,7 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="104"/>
         <source>Ping any host!</source>
-        <translation>Manda un ping!</translation>
+        <translation>Manda un ping a qualsiasi macchina!</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="112"/>
