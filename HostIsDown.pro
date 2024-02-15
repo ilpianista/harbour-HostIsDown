@@ -45,5 +45,4 @@ TRANSLATIONS += \
     translations/harbour-hostisdown-nl.ts \
     translations/harbour-hostisdown-sr.ts \
     translations/harbour-hostisdown-sv.ts \
-    translations/harbour-hostisdown-tr.ts \
-    translations/harbour-hostisdown-zh_Hant.ts
+    translations/harbour-hostisdown-tr.ts
